@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fractions Weekly Plan — Primary 5 Singapore Maths</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #2d2d2d; }
+
+  .header { background: linear-gradient(135deg, #c62828, #e53935); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  .header .meta { font-size: 1rem; opacity: 0.9; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+  .info-tag { background: #ffebee; border: 1px solid #ef9a9a; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.9rem; }
+
+  .week-overview { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .week-overview h2 { color: #c62828; margin-bottom: 1rem; }
+  .day-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0.6rem; }
+  .day-cell { background: #ffebee; border-radius: 8px; padding: 0.7rem; text-align: center; font-size: 0.85rem; }
+  .day-cell .day { font-weight: 700; color: #c62828; margin-bottom: 0.2rem; }
+
+  .lesson { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #e53935; }
+  .lesson h2 { color: #c62828; font-size: 1.3rem; }
+  .lesson .subtitle { color: #777; font-size: 0.9rem; margin-bottom: 1rem; }
+
+  .cpa-phase { margin: 0.8rem 0; padding: 1rem; border-radius: 8px; }
+  .cpa-c { background: #e3f2fd; border-left: 4px solid #1565c0; }
+  .cpa-p { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+  .cpa-a { background: #f3e5f5; border-left: 4px solid #7b1fa2; }
+  .cpa-phase h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .cpa-c h3 { color: #1565c0; }
+  .cpa-p h3 { color: #2e7d32; }
+  .cpa-a h3 { color: #7b1fa2; }
+  .cpa-phase p { font-size: 0.95rem; line-height: 1.6; }
+
+  .practice { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; }
+  .practice h3 { color: #f57f17; font-size: 1rem; margin-bottom: 0.3rem; }
+
+  .homework { background: #fce4ec; border-left: 4px solid #e91e63; padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; }
+  .homework h3 { color: #c2185b; font-size: 1rem; margin-bottom: 0.3rem; }
+
+  .review { background: #e0f2f1; border-left: 4px solid #00897b; padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; }
+  .review h3 { color: #00695c; font-size: 1rem; margin-bottom: 0.3rem; }
+
+  .diff-section { margin: 1rem 0; }
+  .diff-section h3 { color: #c62828; font-size: 1rem; margin-bottom: 0.5rem; }
+  .diff-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+  .diff-card { padding: 0.8rem; border-radius: 8px; font-size: 0.9rem; }
+  .diff-mastery { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .diff-consolidation { background: #e3f2fd; border: 1px solid #90caf9; }
+  .diff-support { background: #fff3e0; border: 1px solid #ffcc80; }
+  .diff-card .level { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.3rem; }
+
+  .assessment-box { background: white; border: 2px solid #ef9a9a; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+  .assessment-box h2 { color: #c62828; margin-bottom: 0.8rem; }
+
+  .resources { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .resources h2 { color: #c62828; margin-bottom: 0.8rem; }
+  .resources li { margin: 0.3rem 0; margin-left: 1.2rem; }
+  .prep-time { background: #e8f5e9; border-radius: 8px; padding: 0.8rem; margin-top: 1rem; font-weight: 600; color: #2e7d32; text-align: center; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 2rem; }
+
+  @media print {
+    body { background: white; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .lesson { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Fractions: Adding &amp; Subtracting Unlike Fractions</h1>
+  <div class="meta">Primary 5 Mathematics | Weekly Plan | 5 &times; 50 minutes</div>
+</div>
+
+<div class="container">
+
+  <div class="info-bar">
+    <span class="info-tag">Singapore</span>
+    <span class="info-tag">Primary 5 (Age 10-11)</span>
+    <span class="info-tag">MOE Syllabus</span>
+    <span class="info-tag">Shaping Maths 5A, Chapter 4</span>
+    <span class="info-tag">CPA Approach</span>
+    <span class="info-tag">Class Size: 35</span>
+  </div>
+
+  <!-- WEEK OVERVIEW -->
+  <div class="week-overview">
+    <h2>Week at a Glance</h2>
+    <p style="margin-bottom: 0.8rem; color: #555;">Prior knowledge: Equivalent fractions, simplifying fractions, adding/subtracting like fractions</p>
+    <div class="day-grid">
+      <div class="day-cell"><div class="day">Mon</div>Adding: Concept (CPA)</div>
+      <div class="day-cell"><div class="day">Tue</div>Adding: Fluency</div>
+      <div class="day-cell"><div class="day">Wed</div>Subtracting</div>
+      <div class="day-cell"><div class="day">Thu</div>Mixed + Word Problems</div>
+      <div class="day-cell"><div class="day">Fri</div>Assessment + Mastery</div>
+    </div>
+  </div>
+
+  <!-- LESSON 1 -->
+  <div class="lesson">
+    <h2>Lesson 1 — Adding Unlike Fractions: Concept Introduction</h2>
+    <div class="subtitle">Monday | 50 minutes | Objective: Add two unlike fractions by finding a common denominator</div>
+
+    <div class="cpa-phase cpa-c">
+      <h3>Concrete (10 min)</h3>
+      <p>Fraction strips and discs. Students physically combine 1/3 + 1/6 using manipulatives. "Can we just put them together? Why not?" Discovery: they need same-sized pieces. Students find the equivalent fraction using the strips, then combine.</p>
+    </div>
+
+    <div class="cpa-phase cpa-p">
+      <h3>Pictorial (15 min)</h3>
+      <p>Bar models. Draw fraction bars, shade and compare. Model finding LCD through visual alignment — show how 1/3 becomes 2/6 by drawing the subdivisions. Textbook pp. 62-63. Students sketch in exercise books alongside teacher demonstration.</p>
+    </div>
+
+    <div class="cpa-phase cpa-a">
+      <h3>Abstract (15 min)</h3>
+      <p>Algorithm: find LCD, convert both fractions, add numerators, simplify. Worked examples on board: 1/4 + 1/6, 2/5 + 1/3, 3/8 + 1/4. Students copy method into exercise books, then try 2 examples independently.</p>
+    </div>
+
+    <div class="practice">
+      <h3>Practice (10 min)</h3>
+      <p>Textbook Exercise 4A, Q1-6 (in class). Teacher circulates, checks for common errors: forgetting to find LCD, not simplifying.</p>
+    </div>
+
+    <div class="homework">
+      <h3>Homework</h3>
+      <p>Workbook 5A, pp. 45-46</p>
+    </div>
+  </div>
+
+  <!-- LESSON 2 -->
+  <div class="lesson">
+    <h2>Lesson 2 — Adding Unlike Fractions: Fluency Building</h2>
+    <div class="subtitle">Tuesday | 50 minutes | Objective: Add unlike fractions fluently, including simplifying answers</div>
+
+    <div class="review">
+      <h3>Review (5 min)</h3>
+      <p>Mark homework together. Address common errors on the board — especially students who found a common denominator but not the LCD (e.g., using 24 instead of 12 for thirds and quarters).</p>
+    </div>
+
+    <div class="cpa-phase cpa-p">
+      <h3>Guided Practice (15 min)</h3>
+      <p>Harder examples with larger denominators: 3/8 + 5/12, 2/9 + 5/6. Emphasise finding LCM efficiently. Bar models for the first example, then transition to abstract only.</p>
+    </div>
+
+    <div class="cpa-phase cpa-a">
+      <h3>Word Problems (20 min)</h3>
+      <p>Model-drawing approach for fraction word problems:</p>
+      <p style="margin: 0.5rem 0; padding: 0.5rem; background: rgba(255,255,255,0.5); border-radius: 4px;"><em>"Sarah ate 1/4 of a cake. Her brother ate 1/3 of the same cake. What fraction of the cake did they eat altogether?"</em></p>
+      <p>Method: Read → Draw bar model → Identify operation → Write equation → Solve → Check answer. Students practise with 3 word problems.</p>
+    </div>
+
+    <div class="practice">
+      <h3>Independent Practice (10 min)</h3>
+      <p>Textbook Exercise 4B, Q1-8</p>
+    </div>
+
+    <div class="homework">
+      <h3>Homework</h3>
+      <p>Worksheet 4.2 (teacher-prepared — mixed addition with word problems)</p>
+    </div>
+  </div>
+
+  <!-- LESSON 3 -->
+  <div class="lesson">
+    <h2>Lesson 3 — Subtracting Unlike Fractions</h2>
+    <div class="subtitle">Wednesday | 50 minutes | Objective: Subtract unlike fractions using common denominators</div>
+
+    <div class="cpa-phase cpa-c">
+      <h3>Concrete / Pictorial (10 min)</h3>
+      <p>Fraction strips: show 3/4 - 1/3 physically. Then draw the bar model. "Same idea as adding — we need the same-sized pieces first. Then we can take away."</p>
+    </div>
+
+    <div class="cpa-phase cpa-a">
+      <h3>Abstract (15 min)</h3>
+      <p>Link to addition method — same LCD process, subtract numerators instead. Worked examples including simplifying and converting improper fractions to mixed numbers: 5/6 - 1/4, 7/8 - 2/3.</p>
+    </div>
+
+    <div class="practice">
+      <h3>Guided Practice (15 min)</h3>
+      <p>Students work in pairs on mixed examples. Teacher circulates, targets weaker students for 1:1 support. Stronger students move to extension: subtract from whole numbers (e.g., 2 - 3/5).</p>
+    </div>
+
+    <div class="practice">
+      <h3>Independent Practice (10 min)</h3>
+      <p>Textbook Exercise 4C, Q1-8</p>
+    </div>
+
+    <div class="homework">
+      <h3>Homework</h3>
+      <p>Workbook 5A, pp. 47-48</p>
+    </div>
+  </div>
+
+  <!-- LESSON 4 -->
+  <div class="lesson">
+    <h2>Lesson 4 — Mixed Operations and Word Problems</h2>
+    <div class="subtitle">Thursday | 50 minutes | Objective: Solve multi-step word problems involving +/- of unlike fractions</div>
+
+    <div class="review">
+      <h3>Quick-Fire Review (5 min)</h3>
+      <p>Oral quiz: teacher calls out pairs of denominators, students call back the LCD. "4 and 6?" "12!" "5 and 8?" "40!" Build speed and confidence.</p>
+    </div>
+
+    <div class="cpa-phase cpa-a">
+      <h3>Model Drawing — Multi-Step Problems (20 min)</h3>
+      <p>2-step word problems. Teacher models, then students try:</p>
+      <p style="margin: 0.5rem 0; padding: 0.5rem; background: rgba(255,255,255,0.5); border-radius: 4px;"><em>"A tank was 5/6 full of water. 1/4 of the water was used for washing. What fraction of the tank still had water?"</em></p>
+      <p>Method: Read → Draw bar model → Identify BOTH operations → Solve step by step → Check.</p>
+    </div>
+
+    <div class="practice">
+      <h3>Group Challenge (15 min)</h3>
+      <p>Problem-solving in groups of 4. Each group gets an advanced problem (Olympiad-style). Groups work on mini-whiteboards, then present solution to class. Applaud all attempts.</p>
+    </div>
+
+    <div class="review">
+      <h3>Consolidation (10 min)</h3>
+      <p>Students self-assess using traffic light: 🟢 green (confident), 🟡 amber (mostly ok, some gaps), 🔴 red (need more help). Teacher notes who is red/amber for Friday's differentiated groups.</p>
+    </div>
+
+    <div class="homework">
+      <h3>Homework</h3>
+      <p>Mixed practice worksheet — addition AND subtraction, computation and word problems</p>
+    </div>
+  </div>
+
+  <!-- LESSON 5 -->
+  <div class="lesson">
+    <h2>Lesson 5 — Assessment and Mastery</h2>
+    <div class="subtitle">Friday | 50 minutes | Objective: Assess understanding; extend and support</div>
+
+    <div class="cpa-phase cpa-a">
+      <h3>Mini-Assessment (20 min)</h3>
+      <p>10-question quiz covering all skills from the week. Mix of computation (6 questions) and word problems (4 questions). Students work individually in silence. Collect papers.</p>
+    </div>
+
+    <div class="diff-section">
+      <h3>Differentiated Follow-Up (25 min)</h3>
+      <p style="margin-bottom: 0.5rem; font-size: 0.9rem;">Based on Thursday's traffic light AND Friday's quiz (quick-mark during the 25 min):</p>
+      <div class="diff-grid">
+        <div class="diff-card diff-mastery">
+          <div class="level">Mastery</div>
+          Extension: adding/subtracting 3 fractions, fraction puzzles, challenge problems from Maths Olympiad bank. These students may also peer-tutor.
+        </div>
+        <div class="diff-card diff-consolidation">
+          <div class="level">Consolidation</div>
+          Rework errors from quiz. Practise 5 more examples with bar model support. Teacher checks work before they move to extension.
+        </div>
+        <div class="diff-card diff-support">
+          <div class="level">Support</div>
+          Guided small group with teacher. Return to fraction manipulatives, focus on LCD finding. Step-by-step worked examples with scaffolding.
+        </div>
+      </div>
+    </div>
+
+    <div class="review">
+      <h3>Wrap-Up (5 min)</h3>
+      <p>Preview next week: multiplication of fractions. Teaser question: <em>"If adding fractions means finding common pieces, what do you think multiplying fractions might mean? Have a think over the weekend!"</em></p>
+    </div>
+
+    <div class="homework">
+      <h3>Homework</h3>
+      <p>Quiz papers sent home for parent signature. Students below 60% receive a targeted practice sheet for the weekend.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="assessment-box">
+    <h2>Assessment Notes</h2>
+    <p>Quiz results recorded in markbook. Students below 60% flagged for intervention next week (before multiplication begins). Share results with parents via quiz paper return.</p>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="resources">
+    <h2>Resources for the Week</h2>
+    <ul>
+      <li>Fraction strips/discs (class set of 35)</li>
+      <li>Bar model templates (photocopied, 35 copies for Monday)</li>
+      <li>Textbook: Shaping Maths 5A, Chapter 4</li>
+      <li>Workbook 5A, pp. 45-48</li>
+      <li>Worksheet 4.2 (teacher-prepared) — photocopy 35</li>
+      <li>Mixed practice worksheet — photocopy 35</li>
+      <li>Mini-whiteboards and markers (for Thursday group work)</li>
+      <li>Quiz papers — photocopy 35</li>
+      <li>Targeted practice sheet for below-60% students</li>
+    </ul>
+    <div class="prep-time">Estimated teacher prep time: ~45 minutes (mostly photocopying and preparing worksheets)</div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Curriculum: MOE Singapore Mathematics Syllabus | Textbook: Shaping Maths 5A
+</div>
+
+</body>
+</html>

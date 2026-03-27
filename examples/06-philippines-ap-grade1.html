@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="fil">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Taunang Plano — Araling Panlipunan Baitang 1</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: white; color: #2d2d2d; line-height: 1.7; }
+
+  .header { background: linear-gradient(135deg, #0d47a1, #1565c0); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2rem; margin-bottom: 0.2rem; }
+  .header .subtitle { font-size: 1.1rem; opacity: 0.9; }
+  .header .meta { font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin: 1.5rem 0; font-size: 0.9rem; }
+  .info-grid div { padding: 0.4rem 0; }
+  .info-grid .label { font-weight: 600; color: #0d47a1; }
+
+  .quarter { margin-bottom: 2rem; }
+  .quarter-header { background: #0d47a1; color: white; padding: 1rem 1.5rem; border-radius: 12px 12px 0 0; }
+  .quarter-header h2 { font-size: 1.3rem; }
+  .quarter-header .en { font-size: 0.9rem; opacity: 0.85; font-style: italic; }
+  .quarter-header .weeks { font-size: 0.85rem; opacity: 0.75; margin-top: 0.3rem; }
+
+  .quarter-body { background: #f8f9fa; border: 1px solid #e0e0e0; border-top: none; border-radius: 0 0 12px 12px; padding: 1.5rem; }
+
+  .week-block { background: white; border-radius: 8px; padding: 1.2rem; margin-bottom: 1rem; border: 1px solid #e0e0e0; }
+  .week-block h3 { color: #0d47a1; font-size: 1.1rem; margin-bottom: 0.2rem; }
+  .week-block .en-title { color: #666; font-size: 0.85rem; font-style: italic; margin-bottom: 0.5rem; }
+
+  .melc { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.6rem 0.8rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .melc .label { font-weight: 700; color: #0d47a1; font-size: 0.8rem; text-transform: uppercase; }
+  .melc .en-melc { color: #666; font-style: italic; font-size: 0.85rem; }
+
+  .activities { margin: 0.5rem 0; }
+  .activities li { margin: 0.2rem 0; margin-left: 1.2rem; font-size: 0.95rem; }
+
+  .values { background: #fff3e0; border-left: 4px solid #ff8f00; padding: 0.5rem 0.8rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .values .label { font-weight: 700; color: #e65100; font-size: 0.8rem; }
+
+  .resources { color: #666; font-size: 0.85rem; margin-top: 0.5rem; font-style: italic; }
+
+  .assessment-task { background: #fce4ec; border: 1px solid #f48fb1; border-radius: 8px; padding: 0.8rem; margin: 0.5rem 0; }
+  .assessment-task .label { font-weight: 700; color: #c2185b; font-size: 0.8rem; text-transform: uppercase; }
+
+  .assessment-framework { background: white; border: 2px solid #0d47a1; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+  .assessment-framework h2 { color: #0d47a1; margin-bottom: 0.8rem; }
+  .weight-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin: 0.8rem 0; }
+  .weight { background: #e3f2fd; border-radius: 8px; padding: 0.8rem; text-align: center; }
+  .weight .pct { font-size: 1.8rem; font-weight: 700; color: #0d47a1; }
+  .weight .type { font-size: 0.85rem; color: #555; }
+
+  .pt-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 1rem; }
+  .pt { background: #fce4ec; border-radius: 8px; padding: 0.6rem; font-size: 0.9rem; }
+  .pt .q { font-weight: 700; color: #c2185b; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 2rem; }
+
+  @media print {
+    body { font-size: 11pt; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .quarter-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .quarter { break-before: page; }
+    .quarter:first-of-type { break-before: auto; }
+    .footer::after { content: ""; display: block; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Taunang Plano — Araling Panlipunan</h1>
+  <div class="subtitle">Baitang 1 (Grade 1)</div>
+  <div class="meta">Taong Pampaaralan 2026-2027 | DepEd K-12 MELCs</div>
+</div>
+
+<div class="container">
+
+  <div class="info-grid">
+    <div><span class="label">Guro:</span> [Pangalan ng Guro]</div>
+    <div><span class="label">Paaralan:</span> [Pangalan ng Paaralan]</div>
+    <div><span class="label">Batayan:</span> DepEd K-12 Most Essential Learning Competencies</div>
+    <div><span class="label">Bilang ng Mag-aaral:</span> 45</div>
+    <div><span class="label">Taon:</span> June 2026 - March 2027</div>
+    <div><span class="label">Wika:</span> Filipino (may English na MELCs)</div>
+  </div>
+
+  <!-- QUARTER 1 -->
+  <div class="quarter">
+    <div class="quarter-header">
+      <h2>Unang Markahan: Ako at ang Aking Sarili</h2>
+      <div class="en">Quarter 1: Me and Myself</div>
+      <div class="weeks">Linggo 1-10 (June - August)</div>
+    </div>
+    <div class="quarter-body">
+
+      <div class="week-block">
+        <h3>Linggo 1-2: Ako Bilang Isang Tao</h3>
+        <div class="en-title">Me as a Person</div>
+        <div class="melc">
+          <div class="label">MELC:</div>
+          Natutukoy ang sariling pangalan, edad, at kasarian
+          <div class="en-melc">Identifies own name, age, and gender</div>
+        </div>
+        <ul class="activities">
+          <li>Self-portrait drawing — iguhit ang sarili gamit ang crayons</li>
+          <li>"Ako si..." introduction game — bawat bata ay magpapakilala sa harap</li>
+          <li>Simple family tree poster — isulat ang pangalan ng pamilya</li>
+          <li>Awiting "Sino Ako?" — kantahan habang itinuturo ang sarili</li>
+        </ul>
+        <div class="resources">Kagamitan: Manila paper, crayons, paste, gunting</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 3-4: Ang Aking Pamilya</h3>
+        <div class="en-title">My Family</div>
+        <div class="melc">
+          <div class="label">MELC:</div>
+          Natutukoy ang mga miyembro ng pamilya at ang kanilang tungkulin
+          <div class="en-melc">Identifies family members and their roles</div>
+        </div>
+        <ul class="activities">
+          <li>Role-play — mga tungkulin ng tatay, nanay, lolo, lola, kuya, ate</li>
+          <li>Iguhit ang mga miyembro ng pamilya at isulat ang pangalan nila</li>
+          <li>Kantahin ang "Ang Pamilya Ko"</li>
+          <li>Sharing circle — magkwento tungkol sa pamilya</li>
+        </ul>
+        <div class="values">
+          <div class="label">Pagpapahalaga:</div>
+          Pagmamahal sa pamilya (Love for family)
+        </div>
+        <div class="resources">Kagamitan: Manila paper, crayons, mga larawan ng pamilya</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 5-6: Ang Aking Tahanan</h3>
+        <div class="en-title">My Home</div>
+        <div class="melc">
+          <div class="label">MELC:</div>
+          Nailalarawan ang sariling tahanan at kapaligiran
+          <div class="en-melc">Describes own home and surroundings</div>
+        </div>
+        <ul class="activities">
+          <li>Iguhit ang inyong bahay — draw your house with details</li>
+          <li>Ihambing ang mga uri ng tahanan: bahay kubo, apartment, townhouse, condo</li>
+          <li>Neighbourhood walk kung maaari — mag-obserba sa paligid ng paaralan</li>
+          <li>Collage: "Ang Tahanan Ko" — gamit ang magazine cutouts</li>
+        </ul>
+        <div class="values">
+          <div class="label">Pagpapahalaga:</div>
+          Pagiging malinis at maayos (Cleanliness and orderliness)
+        </div>
+        <div class="resources">Kagamitan: Manila paper, crayons, magazines, gunting, paste</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 7-8: Mga Pangunahing Pangangailangan</h3>
+        <div class="en-title">Basic Needs</div>
+        <div class="melc">
+          <div class="label">MELC:</div>
+          Natutukoy ang pagkakaiba ng pangangailangan at kagustuhan
+          <div class="en-melc">Differentiates needs from wants</div>
+        </div>
+        <ul class="activities">
+          <li>Sorting game — hiwa-hiwalayin ang pangangailangan at kagustuhan gamit ang mga picture cards</li>
+          <li>Role-play palengke — mamili ng mga kailangan sa pamilya</li>
+          <li>Drawing: "Ang Kailangan Ko vs. Ang Gusto Ko"</li>
+          <li>Class discussion — bakit mahalaga ang pagkakaiba?</li>
+        </ul>
+        <div class="values">
+          <div class="label">Pagpapahalaga:</div>
+          Pagtitipid (Frugality / Wise spending)
+        </div>
+        <div class="resources">Kagamitan: Picture cards (pre-made), play money, manila paper</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 9-10: Mga Tuntunin sa Tahanan</h3>
+        <div class="en-title">Rules at Home</div>
+        <div class="melc">
+          <div class="label">MELC:</div>
+          Naipaliliwanag ang kahalagahan ng mga tuntunin sa tahanan
+          <div class="en-melc">Explains the importance of rules at home</div>
+        </div>
+        <ul class="activities">
+          <li>Brainstorm — ano ang mga tuntunin sa bahay ninyo?</li>
+          <li>Create class charter — iugnay ang mga tuntunin sa bahay at sa paaralan</li>
+          <li>Puppet show — "Ano ang mangyayari kung susunod/hindi susunod sa tuntunin?"</li>
+          <li>Poster making: "Mga Tuntunin sa Aking Tahanan"</li>
+        </ul>
+        <div class="values">
+          <div class="label">Pagpapahalaga:</div>
+          Pagsunod sa tuntunin (Obedience to rules)
+        </div>
+        <div class="assessment-task">
+          <div class="label">Performance Task (Markahang 1):</div>
+          "Ang Araw Ko" — maikling pagtatanghal tungkol sa sarili, pamilya, tahanan, at mga tuntunin. Bawat bata ay magpre-present ng 1-2 minuto.
+          <div style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;"><em>My Day — short presentation about self, family, home, and rules. Each child presents for 1-2 minutes.</em></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUARTER 2 -->
+  <div class="quarter">
+    <div class="quarter-header">
+      <h2>Ikalawang Markahan: Ako at ang Aking Paaralan</h2>
+      <div class="en">Quarter 2: Me and My School</div>
+      <div class="weeks">Linggo 11-20 (September - November)</div>
+    </div>
+    <div class="quarter-body">
+
+      <div class="week-block">
+        <h3>Linggo 11-12: Ang Aking Paaralan</h3>
+        <div class="en-title">My School</div>
+        <div class="melc"><div class="label">MELC:</div> Natutukoy ang pangalan, lokasyon, at mga bahagi ng paaralan <div class="en-melc">Identifies name, location, and parts of the school</div></div>
+        <ul class="activities">
+          <li>School tour — mag-ikot sa paaralan, ituro ang bawat bahagi</li>
+          <li>Map drawing — iguhit ang simple map ng paaralan</li>
+          <li>Labelling activity — ilagay ang pangalan sa bawat lugar</li>
+        </ul>
+        <div class="resources">Kagamitan: Manila paper, crayons, clipboard para sa tour</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 13-14: Mga Kaklase at Kaibigan</h3>
+        <div class="en-title">Classmates and Friends</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pagpapahalaga sa mga kaklase <div class="en-melc">Shows appreciation for classmates</div></div>
+        <ul class="activities">
+          <li>"Friendship web" — ipasa ang yarn habang nagsasabi ng magandang bagay tungkol sa kaklase</li>
+          <li>Partner drawing — iguhit ang kaklase at isulat ang magagandang katangian niya</li>
+        </ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Paggalang sa kapwa (Respect for others)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 15-16: Mga Tuntunin sa Paaralan</h3>
+        <div class="en-title">School Rules</div>
+        <div class="melc"><div class="label">MELC:</div> Nasusunod ang mga tuntunin sa paaralan <div class="en-melc">Follows school rules</div></div>
+        <ul class="activities">
+          <li>Role-play — tamang ugali sa classroom, playground, canteen</li>
+          <li>Poster making — "Mga Dapat Gawin at Hindi Dapat Gawin"</li>
+        </ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Disiplina (Discipline)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 17-18: Mga Taong Tumutulong sa Paaralan</h3>
+        <div class="en-title">School Helpers</div>
+        <div class="melc"><div class="label">MELC:</div> Natutukoy ang mga taong tumutulong sa paaralan at ang kanilang tungkulin <div class="en-melc">Identifies school helpers and their roles</div></div>
+        <ul class="activities">
+          <li>Interview a school helper — magpares-pares at mag-interview ng guard, janitor, librarian, nurse</li>
+          <li>Thank-you card making — gumawa ng card para sa school helpers</li>
+        </ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagpapasalamat (Gratitude)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 19-20: Pagmamahal sa Paaralan</h3>
+        <div class="en-title">Love for School</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pagmamahal at pagmamalasakit sa paaralan <div class="en-melc">Shows love and care for the school</div></div>
+        <ul class="activities">
+          <li>Clean-up drive sa classroom</li>
+          <li>Plant a seed activity — "Alagaan natin ang paaralan"</li>
+        </ul>
+        <div class="assessment-task">
+          <div class="label">Performance Task (Markahang 2):</div>
+          "Ang Paaralan Ko" — poster at oral report tungkol sa paaralan, mga tuntunin, at mga taong tumutulong.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUARTER 3 -->
+  <div class="quarter">
+    <div class="quarter-header">
+      <h2>Ikatlong Markahan: Ako at ang Aking Komunidad</h2>
+      <div class="en">Quarter 3: Me and My Community</div>
+      <div class="weeks">Linggo 21-30 (December - February)</div>
+    </div>
+    <div class="quarter-body">
+
+      <div class="week-block">
+        <h3>Linggo 21-22: Ang Aking Barangay</h3>
+        <div class="en-title">My Barangay</div>
+        <div class="melc"><div class="label">MELC:</div> Nailalarawan ang sariling barangay/komunidad <div class="en-melc">Describes own barangay/community</div></div>
+        <ul class="activities"><li>Draw your barangay — mga landmarks, tindahan, simbahan, plaza</li><li>Discussion: "Ano ang magandang bagay sa ating barangay?"</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagmamahal sa komunidad (Love for community)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 23-24: Mga Taong Tumutulong sa Komunidad</h3>
+        <div class="en-title">Community Helpers</div>
+        <div class="melc"><div class="label">MELC:</div> Natutukoy ang mga taong tumutulong sa komunidad <div class="en-melc">Identifies community helpers</div></div>
+        <ul class="activities"><li>Costume dress-up at role-play — pulis, bumbero, doktor, guro, barangay kapitan</li><li>"Kapag lumaki ako..." — drawing of dream job</li></ul>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 25-26: Mga Tuntunin sa Komunidad</h3>
+        <div class="en-title">Community Rules</div>
+        <div class="melc"><div class="label">MELC:</div> Nasusunod ang mga tuntunin sa komunidad <div class="en-melc">Follows community rules</div></div>
+        <ul class="activities"><li>Traffic rules game — practice sa classroom gamit ang makeshift traffic lights</li><li>Discussion: "Bakit mahalaga ang mga tuntunin?"</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagsunod sa batas (Obedience to laws)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 27-28: Mga Pagdiriwang at Tradisyon</h3>
+        <div class="en-title">Celebrations and Traditions</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pagpapahalaga sa mga pagdiriwang sa komunidad <div class="en-melc">Shows appreciation for community celebrations</div></div>
+        <ul class="activities"><li>Paskuhan celebration / Pasko sa classroom</li><li>Share family traditions — kwentuhan circle</li><li>Make a fiesta poster</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagkakaisa (Unity)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 29-30: Pag-aalaga sa Kapaligiran</h3>
+        <div class="en-title">Taking Care of Our Environment</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pag-aalaga sa kapaligiran <div class="en-melc">Shows care for the environment</div></div>
+        <ul class="activities"><li>Segregation activity — ituro ang tamang paghihiwalay ng basura</li><li>Mini garden project sa classroom</li></ul>
+        <div class="assessment-task">
+          <div class="label">Performance Task (Markahang 3):</div>
+          Community helpers role-play — bawat grupo ay mag-act-out ng isang community helper at ipaliwanag ang kanyang tungkulin.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- QUARTER 4 -->
+  <div class="quarter">
+    <div class="quarter-header">
+      <h2>Ikaapat na Markahan: Ako Bilang Pilipino</h2>
+      <div class="en">Quarter 4: Me as a Filipino</div>
+      <div class="weeks">Linggo 31-40 (February - March)</div>
+    </div>
+    <div class="quarter-body">
+
+      <div class="week-block">
+        <h3>Linggo 31-32: Mga Simbolo ng Pilipinas</h3>
+        <div class="en-title">Symbols of the Philippines</div>
+        <div class="melc"><div class="label">MELC:</div> Natutukoy ang mga pambansang simbolo <div class="en-melc">Identifies national symbols</div></div>
+        <ul class="activities"><li>Colour the Philippine flag — ituro ang kulay at kahulugan</li><li>Kantahin ang "Lupang Hinirang" — practice ng national anthem</li><li>Drawing: Philippine eagle, sampaguita, narra, anahaw, carabao</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagmamahal sa bayan (Love for country)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 33-34: Mga Bayani ng Pilipinas</h3>
+        <div class="en-title">Philippine Heroes</div>
+        <div class="melc"><div class="label">MELC:</div> Nakilala ang mga bayaning Pilipino <div class="en-melc">Recognizes Filipino heroes</div></div>
+        <ul class="activities"><li>Story time: Si Jose Rizal — simplified, age-appropriate story</li><li>Draw your hero — "Sino ang bayani ko?"</li><li>Discussion: "Ano ang ginagawa ng isang bayani?"</li></ul>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 35-36: Mga Pagkakaiba-iba ng Pilipino</h3>
+        <div class="en-title">Filipino Diversity</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pagpapahalaga sa pagkakaiba-iba ng mga Pilipino <div class="en-melc">Shows appreciation for Filipino diversity</div></div>
+        <ul class="activities"><li>Traje/costume show — iba-ibang damit mula sa iba-ibang rehiyon</li><li>Food tasting — kakanin mula sa iba-ibang lugar (kung maaari)</li><li>Map activity — ituro ang mga rehiyon ng Pilipinas</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Pagkakaisa sa pagkakaiba (Unity in diversity)</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 37-38: Mga Magagandang Katangian ng Pilipino</h3>
+        <div class="en-title">Beautiful Filipino Traits</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang mga magagandang katangian ng Pilipino <div class="en-melc">Demonstrates positive Filipino traits</div></div>
+        <ul class="activities"><li>Bayanihan role-play — tulungan ang kapitbahay na lumipat ng bahay</li><li>"Mano po" practice — paggalang sa matatanda</li><li>Poster: "Ako ay Pilipino — Proud ako!"</li></ul>
+        <div class="values"><div class="label">Pagpapahalaga:</div> Bayanihan, Paggalang, Pagkamasipag</div>
+      </div>
+
+      <div class="week-block">
+        <h3>Linggo 39-40: Ako ay Pilipino</h3>
+        <div class="en-title">I am Filipino</div>
+        <div class="melc"><div class="label">MELC:</div> Naipakikita ang pagmamahal sa pagiging Pilipino <div class="en-melc">Shows pride in being Filipino</div></div>
+        <div class="assessment-task">
+          <div class="label">Performance Task (Markahang 4):</div>
+          "Ako ay Pilipino" Cultural Showcase — bawat grupo ay magtatanghal ng isang aspeto ng kulturang Pilipino: awit, sayaw, pagkain, damit, o bayani. Mag-iimbita ng ibang klase para manood.
+          <div style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;"><em>Each group showcases one aspect of Filipino culture: song, dance, food, clothing, or hero. Invite other classes to watch.</em></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ASSESSMENT FRAMEWORK -->
+  <div class="assessment-framework">
+    <h2>Balangkas ng Pagtatasa (Assessment Framework)</h2>
+    <p style="margin-bottom: 0.8rem;">Ayon sa DepEd guidelines:</p>
+    <div class="weight-grid">
+      <div class="weight"><div class="pct">30%</div><div class="type">Written Work<br><span style="font-size: 0.8rem;">Mga sulatin</span></div></div>
+      <div class="weight"><div class="pct">50%</div><div class="type">Performance Task<br><span style="font-size: 0.8rem;">Pagtatanghal</span></div></div>
+      <div class="weight"><div class="pct">20%</div><div class="type">Quarterly Exam<br><span style="font-size: 0.8rem;">Markahang pagsusulit</span></div></div>
+    </div>
+
+    <h3 style="color: #0d47a1; margin-top: 1rem;">Mga Performance Task bawat Markahan:</h3>
+    <div class="pt-grid">
+      <div class="pt"><span class="q">M1:</span> "Ang Araw Ko" — pagtatanghal tungkol sa sarili at pamilya</div>
+      <div class="pt"><span class="q">M2:</span> "Ang Paaralan Ko" — poster at oral report</div>
+      <div class="pt"><span class="q">M3:</span> Community helpers role-play</div>
+      <div class="pt"><span class="q">M4:</span> "Ako ay Pilipino" cultural showcase</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Kurikulum: DepEd K-12 Most Essential Learning Competencies | Araling Panlipunan Baitang 1
+</div>
+
+</body>
+</html>

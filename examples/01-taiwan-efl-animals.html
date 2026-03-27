@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animals Vocabulary — Year 2 EFL Lesson</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #fef9f0; color: #2d2d2d; }
+
+  .header { background: linear-gradient(135deg, #ff9a56, #ff6b6b); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
+  .header .meta { font-size: 1rem; opacity: 0.9; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+  .info-tag { background: #fff3e0; border: 1px solid #ffcc80; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.9rem; }
+
+  .section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { color: #e65100; font-size: 1.3rem; margin-bottom: 0.8rem; border-bottom: 2px solid #ffe0b2; padding-bottom: 0.4rem; }
+  .section h3 { color: #bf360c; font-size: 1.1rem; margin: 1rem 0 0.5rem; }
+
+  .time-badge { display: inline-block; background: #ff6b6b; color: white; border-radius: 12px; padding: 0.2rem 0.7rem; font-size: 0.8rem; font-weight: 600; margin-right: 0.5rem; }
+
+  .activity { margin: 1rem 0; padding: 1rem; background: #fff8f0; border-left: 4px solid #ff9a56; border-radius: 0 8px 8px 0; }
+  .activity p { margin: 0.3rem 0; line-height: 1.6; }
+
+  .teacher-note { background: #e3f2fd; border-left: 4px solid #1976d2; padding: 1rem; border-radius: 0 8px 8px 0; margin: 1rem 0; }
+  .teacher-note::before { content: "Teacher Note / "; font-weight: 600; color: #1565c0; }
+  .teacher-note .zh::before { content: ""; }
+  .teacher-note .zh { color: #1565c0; font-weight: 600; }
+
+  .vocab-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 1rem; margin: 1rem 0; }
+  .vocab-card { background: white; border: 2px solid #ffe0b2; border-radius: 12px; padding: 1.2rem; text-align: center; cursor: pointer; transition: all 0.3s; user-select: none; }
+  .vocab-card:hover { border-color: #ff9a56; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(255,154,86,0.3); }
+  .vocab-card .emoji { font-size: 3rem; display: block; margin-bottom: 0.5rem; }
+  .vocab-card .word { font-size: 1.4rem; font-weight: 700; color: #e65100; }
+  .vocab-card .zh-word { font-size: 1rem; color: #666; margin-top: 0.3rem; }
+  .vocab-card .reveal { display: none; }
+  .vocab-card.revealed .reveal { display: block; }
+  .vocab-card.revealed { border-color: #4caf50; background: #f1f8e9; }
+
+  .game-area { background: #f3e5f5; border-radius: 12px; padding: 1.5rem; margin: 1rem 0; text-align: center; }
+  .game-area h3 { color: #7b1fa2; }
+  .habitats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  .habitat { background: white; border: 2px dashed #ce93d8; border-radius: 12px; padding: 1.5rem 1rem; min-height: 120px; }
+  .habitat .label { font-size: 1.2rem; font-weight: 700; color: #7b1fa2; }
+  .habitat .emoji-label { font-size: 2rem; }
+
+  .drag-animals { display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center; margin: 1rem 0; }
+  .drag-item { background: white; border: 2px solid #ce93d8; border-radius: 50%; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; cursor: grab; transition: all 0.2s; }
+  .drag-item:hover { transform: scale(1.15); box-shadow: 0 4px 12px rgba(123,31,162,0.3); }
+
+  .resources { background: #e8f5e9; border-radius: 8px; padding: 1rem; margin-top: 1rem; }
+  .resources h3 { color: #2e7d32; margin-bottom: 0.5rem; }
+  .resources li { margin: 0.3rem 0; margin-left: 1.2rem; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 2rem; }
+
+  @media print {
+    body { background: white; }
+    .header { background: #e65100 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .vocab-card .reveal { display: block !important; }
+    .drag-item { cursor: default; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Animals Vocabulary</h1>
+  <div class="meta">Year 2 English as a Foreign Language | 40 Minutes</div>
+</div>
+
+<div class="container">
+
+  <div class="info-bar">
+    <span class="info-tag">Taiwan</span>
+    <span class="info-tag">Year 2 (Age 7-8)</span>
+    <span class="info-tag">EFL — Beginner</span>
+    <span class="info-tag">40 Minutes</span>
+    <span class="info-tag">Interactive + Projectable</span>
+  </div>
+
+  <!-- WARM UP -->
+  <div class="section">
+    <h2><span class="time-badge">5 min</span> Warm-Up: Animal Song</h2>
+    <div class="activity">
+      <p>Sing "Old MacDonald Had a Farm" together. Hold up picture flashcards for each animal as it appears in the song.</p>
+      <p>Encourage students to make the animal sounds. It's silly and fun — that's the point.</p>
+    </div>
+    <div class="teacher-note">
+      <span class="zh">先唱歌暖場，讓學生放鬆。每唱到一種動物時舉起對應的圖卡。</span>
+    </div>
+  </div>
+
+  <!-- VOCABULARY -->
+  <div class="section">
+    <h2><span class="time-badge">10 min</span> Vocabulary: Meet the Animals</h2>
+    <p style="margin-bottom: 0.8rem; color: #666;">Click each card to reveal the English word. For projection: click one at a time, let students guess first.</p>
+
+    <div class="teacher-note">
+      <span class="zh">先讓學生猜動物的英文名稱，再點擊卡片顯示答案。鼓勵他們大聲跟讀。</span>
+    </div>
+
+    <div class="vocab-grid">
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐱</span>
+        <div class="reveal">
+          <div class="word">Cat</div>
+          <div class="zh-word">貓</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐶</span>
+        <div class="reveal">
+          <div class="word">Dog</div>
+          <div class="zh-word">狗</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐟</span>
+        <div class="reveal">
+          <div class="word">Fish</div>
+          <div class="zh-word">魚</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐦</span>
+        <div class="reveal">
+          <div class="word">Bird</div>
+          <div class="zh-word">鳥</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐸</span>
+        <div class="reveal">
+          <div class="word">Frog</div>
+          <div class="zh-word">青蛙</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐰</span>
+        <div class="reveal">
+          <div class="word">Rabbit</div>
+          <div class="zh-word">兔子</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐢</span>
+        <div class="reveal">
+          <div class="word">Turtle</div>
+          <div class="zh-word">烏龜</div>
+        </div>
+      </div>
+      <div class="vocab-card" onclick="this.classList.toggle('revealed')">
+        <span class="emoji">🐵</span>
+        <div class="reveal">
+          <div class="word">Monkey</div>
+          <div class="zh-word">猴子</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME -->
+  <div class="section">
+    <h2><span class="time-badge">15 min</span> Game: Where Do They Live?</h2>
+    <div class="game-area">
+      <h3>Drag each animal to its home!</h3>
+      <p style="margin: 0.5rem 0; color: #666;">(In the classroom, students call out answers while teacher moves the cards on the projected screen)</p>
+
+      <div class="drag-animals">
+        <div class="drag-item" title="Cat">🐱</div>
+        <div class="drag-item" title="Fish">🐟</div>
+        <div class="drag-item" title="Monkey">🐵</div>
+        <div class="drag-item" title="Bird">🐦</div>
+        <div class="drag-item" title="Frog">🐸</div>
+        <div class="drag-item" title="Turtle">🐢</div>
+        <div class="drag-item" title="Dog">🐶</div>
+        <div class="drag-item" title="Rabbit">🐰</div>
+      </div>
+
+      <div class="habitats">
+        <div class="habitat">
+          <div class="emoji-label">🏠</div>
+          <div class="label">Home</div>
+          <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">Cat, Dog, Rabbit</p>
+        </div>
+        <div class="habitat">
+          <div class="emoji-label">🌊</div>
+          <div class="label">Water</div>
+          <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">Fish, Frog, Turtle</p>
+        </div>
+        <div class="habitat">
+          <div class="emoji-label">🌳</div>
+          <div class="label">Wild</div>
+          <p style="font-size: 0.85rem; color: #666; margin-top: 0.3rem;">Monkey, Bird</p>
+        </div>
+      </div>
+    </div>
+    <div class="teacher-note">
+      <span class="zh">這是互動環節。讓學生舉手回答每個動物住在哪裡，老師在螢幕上移動。也可以讓學生上來操作。答錯沒關係，重點是開口說英文！</span>
+    </div>
+  </div>
+
+  <!-- PAIR PRACTICE -->
+  <div class="section">
+    <h2><span class="time-badge">5 min</span> Pair Practice</h2>
+    <div class="activity">
+      <p>Students work in pairs. One student points to an animal picture, the other says the English word.</p>
+      <p>Then swap! Each student should say all 8 words at least once.</p>
+      <p>Walk around the room and listen. Praise every attempt — "Good job!", "Wow, you remembered!"</p>
+    </div>
+    <div class="teacher-note">
+      <span class="zh">兩人一組練習。一個指圖片，另一個說英文。然後交換。走動聆聽，多多鼓勵。</span>
+    </div>
+  </div>
+
+  <!-- REVIEW -->
+  <div class="section">
+    <h2><span class="time-badge">5 min</span> Review: Song Again!</h2>
+    <div class="activity">
+      <p>Sing "Old MacDonald" one more time — but this time, students shout out the animal names in English instead of the teacher.</p>
+      <p>End with applause. They learned 8 new English words today!</p>
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="section">
+    <h2>Resources Needed</h2>
+    <div class="resources">
+      <ul>
+        <li>This HTML file (projected or on a screen)</li>
+        <li>8 animal flashcards (printed or hand-drawn)</li>
+        <li>No internet required — works completely offline</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Curriculum: Taiwan 十二年國民基本教育課程綱要 | Subject: English (EFL)
+</div>
+
+</body>
+</html>

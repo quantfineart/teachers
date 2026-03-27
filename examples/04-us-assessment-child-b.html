@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quarterly Progress Report — Child B</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #2d2d2d; line-height: 1.7; }
+
+  .page { max-width: 800px; margin: 2rem auto; background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.08); overflow: hidden; }
+
+  .report-header { background: linear-gradient(135deg, #1565c0, #1976d2); color: white; padding: 2rem; }
+  .report-header h1 { font-size: 1.6rem; margin-bottom: 0.3rem; }
+  .report-header .school { font-size: 1rem; opacity: 0.9; }
+
+  .student-bar { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1rem 2rem; background: #e3f2fd; }
+  .student-bar div { font-size: 0.95rem; }
+  .student-bar .label { font-weight: 600; color: #1565c0; font-size: 0.8rem; text-transform: uppercase; }
+
+  .body { padding: 2rem; }
+
+  .subject { margin-bottom: 2rem; }
+  .subject-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; padding-bottom: 0.5rem; border-bottom: 2px solid #e3f2fd; }
+  .subject-header h2 { color: #1565c0; font-size: 1.2rem; }
+  .grade-badge { display: inline-block; padding: 0.3rem 1rem; border-radius: 20px; font-weight: 700; font-size: 0.9rem; }
+  .grade-exceeds { background: #e8f5e9; color: #2e7d32; }
+  .grade-meets { background: #e3f2fd; color: #1565c0; }
+  .grade-approaching { background: #fff3e0; color: #e65100; }
+
+  .standard-ref { font-size: 0.8rem; color: #999; margin-bottom: 0.5rem; }
+
+  .narrative { margin-bottom: 1rem; }
+  .narrative p { margin-bottom: 0.8rem; }
+
+  .strengths { background: #e8f5e9; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
+  .strengths::before { content: "Strengths"; font-weight: 700; color: #2e7d32; display: block; margin-bottom: 0.3rem; font-size: 0.85rem; text-transform: uppercase; }
+
+  .growth { background: #fff3e0; border-radius: 8px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
+  .growth::before { content: "Area for Growth"; font-weight: 700; color: #e65100; display: block; margin-bottom: 0.3rem; font-size: 0.85rem; text-transform: uppercase; }
+
+  .action { background: #e3f2fd; border-radius: 8px; padding: 0.8rem 1rem; }
+  .action::before { content: "What We're Doing"; font-weight: 700; color: #1565c0; display: block; margin-bottom: 0.3rem; font-size: 0.85rem; text-transform: uppercase; }
+
+  .divider { height: 1px; background: #e0e0e0; margin: 2rem 0; }
+
+  .overall { background: #f5f5f5; border-radius: 12px; padding: 1.5rem; margin: 2rem 0; }
+  .overall h2 { color: #1565c0; font-size: 1.2rem; margin-bottom: 0.8rem; }
+
+  .home-actions { margin-top: 2rem; }
+  .home-actions h2 { color: #1565c0; font-size: 1.2rem; margin-bottom: 1rem; }
+  .home-action { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 0.8rem; padding: 0.8rem; background: #fafafa; border-radius: 8px; }
+  .home-action .icon { font-size: 1.5rem; width: 40px; text-align: center; flex-shrink: 0; }
+  .home-action .text { font-size: 0.95rem; }
+  .home-action .text strong { display: block; margin-bottom: 0.2rem; }
+
+  .teacher-sign { margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #e3f2fd; display: flex; justify-content: space-between; color: #999; font-size: 0.9rem; }
+
+  .footer { text-align: center; padding: 1.5rem; color: #bbb; font-size: 0.8rem; background: #fafafa; }
+
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; border-radius: 0; }
+    .report-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .student-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <div class="report-header">
+    <h1>Quarterly Progress Report</h1>
+    <div class="school">Quarter 2 | 2026-2027 School Year</div>
+  </div>
+
+  <div class="student-bar">
+    <div><div class="label">Student</div>Child B</div>
+    <div><div class="label">Grade</div>3</div>
+    <div><div class="label">Teacher</div>[Teacher Name]</div>
+  </div>
+
+  <div class="body">
+
+    <!-- READING -->
+    <div class="subject">
+      <div class="subject-header">
+        <h2>Reading</h2>
+        <span class="grade-badge grade-meets">Meets Standard (B)</span>
+      </div>
+      <div class="standard-ref">CCSS.ELA-LITERACY.RL.3</div>
+
+      <div class="strengths">
+        Child B reads at grade level and shows strong comprehension skills, particularly when discussing character motivations and story structure. They can identify main ideas and supporting details with confidence, and they love sharing their thoughts about books during class discussions.
+      </div>
+
+      <div class="growth">
+        Reading fluency is the main area for development. Child B sometimes reads slowly or hesitantly, which affects their ability to get through longer texts and can impact comprehension when passages are complex.
+      </div>
+
+      <div class="action">
+        We are building reading stamina through daily independent reading time with graduated text lengths. Child B has been choosing books they're genuinely excited about, which is helping.
+      </div>
+    </div>
+
+    <!-- WRITING -->
+    <div class="subject">
+      <div class="subject-header">
+        <h2>Writing</h2>
+        <span class="grade-badge grade-approaching">Approaching Standard (C)</span>
+      </div>
+      <div class="standard-ref">CCSS.ELA-LITERACY.W.3</div>
+
+      <div class="strengths">
+        Child B has wonderful ideas and a vivid imagination that comes through in their writing. Their story ideas are creative and engaging, and when they dictate their ideas verbally, the quality of their thinking is impressive.
+      </div>
+
+      <div class="growth">
+        Getting those ideas onto paper is the challenge right now. Handwriting is still developing, and Child B sometimes avoids writing tasks because of the physical effort involved.
+      </div>
+
+      <div class="action">
+        We are exploring options including structured pre-writing graphic organizers, opportunities to dictate ideas before writing, and short daily writing warm-ups that build hand strength without pressure. This is an area where continued practice at home would make a real difference.
+      </div>
+    </div>
+
+    <!-- MATH -->
+    <div class="subject">
+      <div class="subject-header">
+        <h2>Mathematics</h2>
+        <span class="grade-badge grade-exceeds">Exceeds Standard (A-)</span>
+      </div>
+      <div class="standard-ref">CCSS.MATH.CONTENT.3</div>
+
+      <div class="strengths">
+        Child B is performing above grade level and genuinely enjoys problem-solving challenges. They approach multi-step problems with enthusiasm, can explain their reasoning clearly to peers, and are often the first to spot patterns in number work.
+      </div>
+
+      <div class="growth">
+        Accuracy with basic multiplication and addition facts. Child B sometimes rushes through computation and makes careless errors, particularly when they're excited to get to the "interesting" part of a problem.
+      </div>
+
+      <div class="action">
+        We are incorporating timed fact practice to build automaticity while keeping the challenge level high with extension problems. Child B has responded well to this — they enjoy "beating their own score."
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- SOCIAL-EMOTIONAL -->
+    <div class="subject">
+      <div class="subject-header">
+        <h2>Social-Emotional Development</h2>
+      </div>
+
+      <div class="strengths">
+        Child B is a kind and well-liked member of our classroom community. They show genuine empathy toward peers and are often the first to offer help when someone is struggling. They have strong friendships and bring positive energy to group activities.
+      </div>
+
+      <div class="growth">
+        In group work, Child B sometimes takes a dominant role and could work on listening to others' ideas and sharing leadership. Attention and focus also remain an area for development — Child B benefits from frequent check-ins, hands-on activities, and movement breaks.
+      </div>
+
+      <div class="action">
+        We are practising "listening rounds" in group work where every member shares before discussion. When engaged in hands-on learning, Child B's focus and output are excellent — we're building on this strength.
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- OVERALL -->
+    <div class="overall">
+      <h2>Overall Summary</h2>
+      <p>Child B is a creative, capable learner with strong mathematical thinking and genuine kindness. They bring energy and imagination to everything they do, and they're a valued member of our classroom.</p>
+      <p style="margin-top: 0.5rem;">Our priorities for Quarter 3 are building writing stamina and reading fluency, and continuing to develop self-regulation strategies for sustained focus. I'm confident Child B will make strong progress in these areas.</p>
+    </div>
+
+    <!-- HOME ACTIONS -->
+    <div class="home-actions">
+      <h2>Recommended Actions at Home</h2>
+
+      <div class="home-action">
+        <div class="icon">📖</div>
+        <div class="text">
+          <strong>Daily reading aloud (15-20 minutes)</strong>
+          Have Child B read to you, a sibling, or even a pet. Focus on reading aloud — this builds fluency. Choose books they love. Don't correct every mistake — let them self-correct and enjoy the story.
+        </div>
+      </div>
+
+      <div class="home-action">
+        <div class="icon">🔢</div>
+        <div class="text">
+          <strong>Math facts practice (5 minutes daily)</strong>
+          Multiplication tables through 10. Flashcards, apps, or quiz games — whatever they enjoy. Make it fun and fast, not stressful. They already love math — this just builds speed.
+        </div>
+      </div>
+
+      <div class="home-action">
+        <div class="icon">✏️</div>
+        <div class="text">
+          <strong>Low-pressure writing</strong>
+          Encourage any kind of writing at home — journals, letters to family, shopping lists, captions on drawings, thank-you notes. The goal is getting comfortable putting words on paper, not perfection. Celebrate every attempt.
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNATURE -->
+    <div class="teacher-sign">
+      <div>Teacher: _________________________</div>
+      <div>Date: _________________________</div>
+      <div>Parent Signature: _________________________</div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Curriculum: Common Core State Standards (CCSS) | Student data anonymized
+</div>
+
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Identity and Place — Visual Arts Year 9 Term Plan</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #fafafa; color: #2d2d2d; }
+
+  .header { background: linear-gradient(135deg, #00695c, #00897b); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2.2rem; margin-bottom: 0.3rem; }
+  .header .meta { font-size: 1rem; opacity: 0.9; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+  .info-tag { background: #e0f2f1; border: 1px solid #80cbc4; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.9rem; }
+
+  .section { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .section h2 { color: #00695c; font-size: 1.3rem; margin-bottom: 0.8rem; border-bottom: 2px solid #b2dfdb; padding-bottom: 0.4rem; }
+
+  .overview-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin: 1rem 0; }
+  .overview-cell { background: #e0f2f1; border-radius: 8px; padding: 1rem; }
+  .overview-cell .week-num { font-weight: 700; color: #00695c; font-size: 0.9rem; }
+  .overview-cell .week-title { font-size: 1.05rem; font-weight: 600; margin: 0.2rem 0; }
+  .overview-cell .week-detail { font-size: 0.85rem; color: #555; }
+  .overview-cell.assessment { background: #fff3e0; border: 2px solid #ffcc80; }
+
+  .week-block { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #00897b; }
+  .week-block h2 { color: #00695c; font-size: 1.3rem; margin-bottom: 0.3rem; }
+  .week-block .subtitle { color: #777; font-size: 0.9rem; margin-bottom: 1rem; }
+
+  .lesson { margin: 1rem 0; padding: 1rem; background: #f5f5f5; border-radius: 8px; }
+  .lesson h3 { color: #004d40; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .lesson p, .lesson li { line-height: 1.7; margin: 0.2rem 0; font-size: 0.95rem; }
+  .lesson ul { margin-left: 1.2rem; }
+
+  .artist-study { background: #e8eaf6; border-left: 4px solid #5c6bc0; padding: 1rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; }
+  .artist-study h4 { color: #283593; margin-bottom: 0.3rem; }
+
+  .cultural-note { background: #fff3e0; border-left: 4px solid #ff8f00; padding: 1rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; }
+  .cultural-note h4 { color: #e65100; margin-bottom: 0.3rem; }
+  .cultural-note p { font-size: 0.9rem; line-height: 1.6; }
+
+  .safety-note { background: #fce4ec; border-left: 4px solid #e91e63; padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 0.8rem 0; font-size: 0.9rem; }
+  .safety-note strong { color: #c2185b; }
+
+  .materials-box { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 8px; padding: 1rem; margin: 1rem 0; }
+  .materials-box h4 { color: #2e7d32; margin-bottom: 0.5rem; }
+  .materials-box li { margin: 0.2rem 0; margin-left: 1.2rem; font-size: 0.9rem; }
+  .materials-box .order-note { color: #c62828; font-weight: 600; font-size: 0.85rem; margin-top: 0.5rem; }
+
+  .assessment-box { background: #fff8e1; border: 2px solid #ffe082; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+  .assessment-box h2 { color: #f57f17; border-bottom: 2px solid #ffe082; }
+  .criteria-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; margin-top: 1rem; }
+  .criteria { background: white; padding: 0.8rem; border-radius: 8px; border: 1px solid #ffe082; }
+  .criteria .label { font-weight: 700; font-size: 0.85rem; color: #f57f17; text-transform: uppercase; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 2rem; }
+
+  @media print {
+    body { background: white; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .week-block { break-inside: avoid; page-break-inside: avoid; }
+    .section { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Identity and Place</h1>
+  <div class="meta">Visual Arts Year 9 | 10-Week Term Plan | ACARA Aligned</div>
+</div>
+
+<div class="container">
+
+  <div class="info-bar">
+    <span class="info-tag">Victoria, Australia</span>
+    <span class="info-tag">Year 9 (Age 14-15)</span>
+    <span class="info-tag">ACARA Visual Arts</span>
+    <span class="info-tag">2 &times; 100 min doubles/week</span>
+    <span class="info-tag">Specialist Art Room</span>
+  </div>
+
+  <!-- TERM OVERVIEW -->
+  <div class="section">
+    <h2>Term Overview</h2>
+    <p style="margin-bottom: 1rem; color: #555;">Big question: <em>"How do artists express who they are and where they belong?"</em></p>
+
+    <div class="overview-grid">
+      <div class="overview-cell"><div class="week-num">Week 1-2</div><div class="week-title">Self-Portrait Exploration</div><div class="week-detail">Mixed media experiments, Frida Kahlo, Del Kathryn Barton</div></div>
+      <div class="overview-cell"><div class="week-num">Week 3-4</div><div class="week-title">Place and Belonging</div><div class="week-detail">Landscape and identity, Indigenous Australian perspectives (with cultural protocols)</div></div>
+      <div class="overview-cell assessment"><div class="week-num">Week 5</div><div class="week-title">Folio Submission 1</div><div class="week-detail">Process folio: research, experiments, reflections</div></div>
+      <div class="overview-cell"><div class="week-num">Week 6-7</div><div class="week-title">Printmaking: Layers of Identity</div><div class="week-detail">Linocut techniques, reduction printing, symbolism</div></div>
+      <div class="overview-cell"><div class="week-num">Week 8-9</div><div class="week-title">Final Artwork Development</div><div class="week-detail">Student-directed making, artist statement drafting</div></div>
+      <div class="overview-cell assessment"><div class="week-num">Week 10</div><div class="week-title">Final Artwork + Statement</div><div class="week-detail">Exhibition-ready artwork and written artist statement</div></div>
+    </div>
+  </div>
+
+  <!-- WEEK 1-2 -->
+  <div class="week-block">
+    <h2>Weeks 1-2: Self-Portrait Exploration</h2>
+    <div class="subtitle">4 sessions &times; 100 min | Focus: Making + Responding</div>
+
+    <div class="artist-study">
+      <h4>Artist Study: Frida Kahlo &amp; Del Kathryn Barton</h4>
+      <p>How do these artists represent identity? Kahlo's use of symbolism (animals, plants, pain). Barton's hyper-detailed, fantastical self-portraits. Students analyse and discuss: what do these portraits tell us about the artist beyond what they look like?</p>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 1: Introduction + Experimental Sketching</h3>
+      <ul>
+        <li>Class discussion: "What is identity? What makes you, you?"</li>
+        <li>Analyse Kahlo and Barton — visual analysis worksheet</li>
+        <li>Experimental self-portraits: 4 quick sketches (10 min each) using different media — pencil, charcoal, collage, ink</li>
+        <li>Folio entry: annotate sketches with reflections</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 2: Photography + Mixed Media</h3>
+      <ul>
+        <li>Self-portrait photography session (school devices or printed photos from home)</li>
+        <li>Mixed media experimentation: layer drawing over photographs, add collage elements, experiment with colour</li>
+        <li>Technique demo: image transfer using gel medium</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 3-4: Developing the Self-Portrait</h3>
+      <ul>
+        <li>Choose strongest approach from experiments</li>
+        <li>Develop into a larger, more resolved self-portrait</li>
+        <li>Studio time with teacher circulating for 1:1 feedback</li>
+        <li>End of session 4: peer critique — "Two stars and a wish"</li>
+      </ul>
+    </div>
+
+    <div class="materials-box">
+      <h4>Materials</h4>
+      <ul>
+        <li>Cartridge paper A3, charcoal, ink, pencils, collage materials</li>
+        <li>Gel medium for image transfer</li>
+        <li>Magazines for collage, scissors, glue</li>
+        <li>Printed photographs (students bring from home or take in class)</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 3-4 -->
+  <div class="week-block">
+    <h2>Weeks 3-4: Place and Belonging</h2>
+    <div class="subtitle">4 sessions &times; 100 min | Focus: Making + Responding</div>
+
+    <div class="cultural-note">
+      <h4>Cultural Protocol — Indigenous Australian Art</h4>
+      <p>This unit explores how place shapes identity, including Indigenous Australian connections to Country. Important protocols to observe:</p>
+      <ul style="margin-left: 1.2rem; margin-top: 0.5rem;">
+        <li><strong>Acknowledgement of Country</strong> at the start of this unit</li>
+        <li><strong>Do NOT use dot painting as a classroom activity.</strong> Dot painting carries specific cultural meanings and belongs to particular Aboriginal nations. Using it as a generic technique is cultural appropriation.</li>
+        <li><strong>Focus on concept, not imitation:</strong> explore how Indigenous artists express connection to Country through their own lens — colour, symbol, pattern, story. Students then express <em>their own</em> connection to <em>their own</em> place using <em>their own</em> visual language.</li>
+        <li><strong>Consult with local Indigenous community</strong> if possible. Many communities have education liaison officers who can advise or visit.</li>
+        <li>Suggested artists: Emily Kame Kngwarreye, Lin Onus, Reko Rennie (urban Indigenous art challenges assumptions about what Aboriginal art "should" look like)</li>
+      </ul>
+    </div>
+
+    <div class="artist-study">
+      <h4>Artist Study: Emily Kame Kngwarreye, Reko Rennie &amp; a non-Indigenous landscape artist</h4>
+      <p>Compare how different artists represent their connection to place. Kngwarreye's immersive relationship with Country. Rennie's challenge to expectations. A non-Indigenous artist's landscape work (e.g., Fred Williams, John Olsen). What's similar? What's different? Why does perspective matter?</p>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 5: Exploring Place</h3>
+      <ul>
+        <li>Acknowledgement of Country</li>
+        <li>Discussion: "What does 'place' mean to you? Where do you feel you belong?"</li>
+        <li>Artist study: analyse Indigenous and non-Indigenous approaches to place</li>
+        <li>Site sketching: go outside and draw the school grounds / local area. Focus on what makes this place unique.</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 6-7: Personal Place Artwork</h3>
+      <ul>
+        <li>Students develop artwork representing THEIR place — could be their suburb, their home, a place they feel connected to, a cultural homeland they've never visited</li>
+        <li>Media: student choice (painting, drawing, collage, printmaking, photography, mixed)</li>
+        <li>Focus on symbolism: what colours, shapes, and images represent this place for you?</li>
+        <li>Folio work: document process, artist references, reflections</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 8: Responding + Reflection</h3>
+      <ul>
+        <li>Gallery walk of in-progress work</li>
+        <li>Written reflection: "How does my artwork express my connection to this place?"</li>
+        <li>Prepare folio for Week 5 submission</li>
+      </ul>
+    </div>
+
+    <div class="materials-box">
+      <h4>Materials</h4>
+      <ul>
+        <li>Painting supplies: acrylic, watercolour, canvas/board</li>
+        <li>Drawing materials, collage supplies</li>
+        <li>Sketchbooks for site drawing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 5 -->
+  <div class="week-block" style="border-left-color: #ff8f00;">
+    <h2>Week 5: Folio Submission 1</h2>
+    <div class="subtitle">Assessment checkpoint</div>
+
+    <div class="lesson">
+      <h3>Session 9: Folio Preparation</h3>
+      <ul>
+        <li>Students compile and organise process folio: research pages, experimental work, annotated sketches, artist studies, reflections</li>
+        <li>Self-assessment against rubric criteria before submission</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 10: Introduction to Printmaking</h3>
+      <ul>
+        <li>Technique demo: linocut basics — carving, inking, printing</li>
+        <li>Safety briefing: lino cutter handling, cutting AWAY from the body, bench hooks</li>
+        <li>Students begin practice cuts on scrap lino</li>
+      </ul>
+    </div>
+
+    <div class="safety-note">
+      <strong>Safety:</strong> Lino cutters are sharp. Demonstrate safe handling. All students must use bench hooks. No cutting toward hands or body. First aid kit accessible. Students who have not heard the safety briefing may not use the tools.
+    </div>
+  </div>
+
+  <!-- WEEK 6-7 -->
+  <div class="week-block">
+    <h2>Weeks 6-7: Printmaking — Layers of Identity</h2>
+    <div class="subtitle">4 sessions &times; 100 min | Focus: Making</div>
+
+    <div class="lesson">
+      <h3>Session 11-12: Design + Carving</h3>
+      <ul>
+        <li>Design a linocut print that combines self-portrait and place elements — "layers of identity"</li>
+        <li>Concept: printing in 2-3 colours (reduction technique or multiple blocks)</li>
+        <li>Carve design into lino (allow 2 full sessions for carving — it takes time)</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 13-14: Printing</h3>
+      <ul>
+        <li>Inking and printing — edition of 3-5 prints</li>
+        <li>Experiment with colour combinations, paper types</li>
+        <li>Folio: document printing process, colour decisions, successes and failures</li>
+        <li>Select best print for final exhibition</li>
+      </ul>
+    </div>
+
+    <div class="materials-box">
+      <h4>Materials</h4>
+      <ul>
+        <li>Lino sheets (pre-cut to A4), lino cutters (class set), bench hooks</li>
+        <li>Printing ink (water-based), rollers/brayers, printing paper</li>
+        <li>Tracing paper for design transfer</li>
+      </ul>
+      <div class="order-note">ORDER BY WEEK 3: Lino sheets and printing ink (2-week delivery typical)</div>
+    </div>
+  </div>
+
+  <!-- WEEK 8-9 -->
+  <div class="week-block">
+    <h2>Weeks 8-9: Final Artwork Development</h2>
+    <div class="subtitle">4 sessions &times; 100 min | Focus: Making + Responding</div>
+
+    <div class="lesson">
+      <h3>Sessions 15-18: Student-Directed Studio Time</h3>
+      <ul>
+        <li>Students choose their final artwork medium and approach — can build on any work from the term</li>
+        <li>Must clearly connect to the theme "Identity and Place"</li>
+        <li>Teacher circulates for 1:1 conferences</li>
+        <li>Draft artist statement (150-200 words): what does the work mean? What influenced it? How does it express identity?</li>
+        <li>Peer feedback sessions built in</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WEEK 10 -->
+  <div class="week-block" style="border-left-color: #ff8f00;">
+    <h2>Week 10: Final Artwork + Artist Statement</h2>
+    <div class="subtitle">Assessment submission</div>
+
+    <div class="lesson">
+      <h3>Session 19: Finishing + Statement</h3>
+      <ul>
+        <li>Final studio time to resolve artwork</li>
+        <li>Finalize artist statement</li>
+        <li>Mount/present work for exhibition</li>
+      </ul>
+    </div>
+
+    <div class="lesson">
+      <h3>Session 20: Class Exhibition + Reflection</h3>
+      <ul>
+        <li>Gallery-style exhibition in the art room</li>
+        <li>Students walk through and read each other's artist statements</li>
+        <li>Written reflection: "How has my understanding of identity and place changed through making art?"</li>
+        <li>Celebration of the term's work</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="assessment-box">
+    <h2>Assessment Framework (ACARA)</h2>
+    <p style="margin: 0.8rem 0; font-size: 0.95rem;">Two formal assessment points: Folio (Week 5, 40%) and Final Artwork + Artist Statement (Week 10, 60%)</p>
+
+    <div class="criteria-grid">
+      <div class="criteria">
+        <div class="label">Experimentation &amp; Risk-Taking</div>
+        <p style="font-size: 0.85rem; margin-top: 0.3rem;">Willingness to try new media, techniques, and ideas. Evidence of exploration beyond the comfortable.</p>
+      </div>
+      <div class="criteria">
+        <div class="label">Conceptual Depth</div>
+        <p style="font-size: 0.85rem; margin-top: 0.3rem;">Strength of connection between artwork and theme. Thoughtfulness of artist statement.</p>
+      </div>
+      <div class="criteria">
+        <div class="label">Technical Skill</div>
+        <p style="font-size: 0.85rem; margin-top: 0.3rem;">Control of materials and techniques. Quality of finished work and presentation.</p>
+      </div>
+      <div class="criteria">
+        <div class="label">Reflection &amp; Analysis</div>
+        <p style="font-size: 0.85rem; margin-top: 0.3rem;">Quality of folio documentation. Ability to analyse own and others' work. Written reflections.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Curriculum: Australian Curriculum (ACARA) Visual Arts | State: Victoria
+</div>
+
+</body>
+</html>

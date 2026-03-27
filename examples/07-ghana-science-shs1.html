@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integrated Science SHS1 — Term 1 Plan</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: white; color: #2d2d2d; line-height: 1.7; }
+
+  .header { background: linear-gradient(135deg, #006d32, #009645); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  .header .meta { font-size: 1rem; opacity: 0.9; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+  .info-tag { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.9rem; }
+
+  .reality-box { background: #fff3e0; border: 2px solid #ffcc80; border-radius: 12px; padding: 1.2rem; margin-bottom: 1.5rem; }
+  .reality-box h3 { color: #e65100; margin-bottom: 0.5rem; }
+  .reality-box p { font-size: 0.95rem; }
+  .reality-box ul { margin-left: 1.2rem; margin-top: 0.5rem; }
+  .reality-box li { font-size: 0.9rem; margin: 0.2rem 0; }
+
+  .overview { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border: 1px solid #e0e0e0; }
+  .overview h2 { color: #006d32; margin-bottom: 1rem; }
+  .strand-header { background: #006d32; color: white; padding: 0.6rem 1rem; border-radius: 8px; font-weight: 700; margin: 0.8rem 0 0.5rem; }
+  .overview-week { display: flex; gap: 0.8rem; padding: 0.5rem 0; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+  .overview-week:last-child { border-bottom: none; }
+  .overview-week .wk { font-weight: 700; color: #006d32; min-width: 60px; }
+
+  .week { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #009645; }
+  .week h2 { color: #006d32; font-size: 1.3rem; margin-bottom: 0.3rem; }
+  .week .subtitle { color: #777; font-size: 0.9rem; margin-bottom: 0.8rem; }
+
+  .standard { background: #e8f5e9; border-left: 4px solid #006d32; padding: 0.6rem 0.8rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; }
+  .standard .label { font-weight: 700; color: #006d32; font-size: 0.8rem; text-transform: uppercase; }
+  .indicators { font-size: 0.9rem; margin-top: 0.3rem; }
+  .indicators li { margin: 0.2rem 0; margin-left: 1.2rem; }
+
+  .period { margin: 1rem 0; padding: 1rem; background: #fafafa; border-radius: 8px; border: 1px solid #eee; }
+  .period h3 { color: #004d25; font-size: 1.05rem; margin-bottom: 0.5rem; }
+  .period p { font-size: 0.95rem; margin: 0.3rem 0; }
+
+  .group-note { background: #e3f2fd; border-left: 4px solid #1565c0; padding: 0.6rem; border-radius: 0 6px 6px 0; font-size: 0.9rem; margin: 0.5rem 0; }
+  .group-note strong { color: #1565c0; }
+
+  .no-lab { background: #fff8e1; border-left: 4px solid #f9a825; padding: 0.6rem; border-radius: 0 6px 6px 0; font-size: 0.9rem; margin: 0.5rem 0; }
+  .no-lab strong { color: #f57f17; }
+
+  .resources-tag { color: #666; font-size: 0.85rem; font-style: italic; margin-top: 0.5rem; }
+
+  .assessment-inline { background: #fce4ec; border-left: 4px solid #e91e63; padding: 0.6rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .assessment-inline strong { color: #c2185b; }
+
+  .homework { background: #f3e5f5; border-left: 4px solid #7b1fa2; padding: 0.5rem 0.8rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .homework strong { color: #7b1fa2; }
+
+  .local-connection { background: #e0f2f1; border-left: 4px solid #00897b; padding: 0.6rem; border-radius: 0 6px 6px 0; margin: 0.5rem 0; font-size: 0.9rem; }
+  .local-connection strong { color: #00695c; }
+
+  .exam-section { background: white; border: 2px solid #006d32; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+  .exam-section h2 { color: #006d32; margin-bottom: 0.8rem; }
+  .weight-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1rem 0; }
+  .weight { background: #e8f5e9; border-radius: 8px; padding: 1rem; text-align: center; }
+  .weight .pct { font-size: 2rem; font-weight: 700; color: #006d32; }
+  .weight .type { font-size: 0.9rem; color: #555; }
+
+  .assessment-schedule { margin-top: 1rem; }
+  .assessment-schedule li { margin: 0.4rem 0; margin-left: 1.2rem; }
+
+  .resource-summary { background: white; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .resource-summary h2 { color: #006d32; margin-bottom: 0.8rem; }
+  .resource-cols { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+  .resource-col h4 { color: #006d32; margin-bottom: 0.5rem; }
+  .resource-col li { margin: 0.2rem 0; margin-left: 1.2rem; font-size: 0.9rem; }
+  .prep-time { background: #e8f5e9; border-radius: 8px; padding: 1rem; margin-top: 1rem; text-align: center; font-weight: 600; color: #006d32; font-size: 1.1rem; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; border-top: 1px solid #eee; margin-top: 2rem; }
+
+  @media print {
+    body { font-size: 10.5pt; }
+    .header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .strand-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .week { break-inside: avoid; page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Integrated Science — SHS1</h1>
+  <div class="meta">Term 1 (September - December) | 13 Weeks | GES Standards-Based Curriculum</div>
+</div>
+
+<div class="container">
+
+  <div class="info-bar">
+    <span class="info-tag">Ghana</span>
+    <span class="info-tag">Senior High School 1 (Age 15-16)</span>
+    <span class="info-tag">GES Standards-Based Curriculum</span>
+    <span class="info-tag">6 periods/week &times; 40 min</span>
+    <span class="info-tag">52 students</span>
+    <span class="info-tag">Limited lab equipment</span>
+  </div>
+
+  <!-- REALITY BOX -->
+  <div class="reality-box">
+    <h3>Designed for Your Reality</h3>
+    <p>This plan is built around what you actually have — not what a textbook assumes you have.</p>
+    <ul>
+      <li>All activities work with <strong>everyday materials</strong> — most are free or very cheap</li>
+      <li>Activities are designed for <strong>groups of 6-7</strong> (manageable with 52 students, one teacher)</li>
+      <li><strong>Peer and self-assessment</strong> used throughout to reduce your marking load</li>
+      <li>Lab equipment is marked as <strong>optional</strong> — there's always a no-lab alternative</li>
+      <li>Estimated prep time: <strong>~30 minutes per week</strong></li>
+    </ul>
+  </div>
+
+  <!-- TERM OVERVIEW -->
+  <div class="overview">
+    <h2>Term 1 Overview</h2>
+
+    <div class="strand-header">Strand 1: Diversity of Matter (Weeks 1-7)</div>
+    <div class="overview-week"><span class="wk">Wk 1</span> Living and non-living things — classification, characteristics</div>
+    <div class="overview-week"><span class="wk">Wk 2</span> Cells — basic unit of life, plant vs animal cells, organelle functions</div>
+    <div class="overview-week"><span class="wk">Wk 3</span> Levels of organisation — cells, tissues, organs, systems</div>
+    <div class="overview-week"><span class="wk">Wk 4</span> Materials — properties, classification, elements vs compounds vs mixtures</div>
+    <div class="overview-week"><span class="wk">Wk 5</span> Separation techniques — filtration, evaporation, distillation, magnetism</div>
+    <div class="overview-week"><span class="wk">Wk 6</span> Acids, bases and salts — pH concept, indicators, neutralisation</div>
+    <div class="overview-week"><span class="wk">Wk 7</span> Acids, bases and salts — applications, everyday chemistry</div>
+
+    <div class="strand-header">Strand 2: Tools and Methods of Science (Weeks 8-12)</div>
+    <div class="overview-week"><span class="wk">Wk 8</span> Measurement — SI units, length, mass, volume, time</div>
+    <div class="overview-week"><span class="wk">Wk 9</span> Measurement — estimation, recording data, accuracy</div>
+    <div class="overview-week"><span class="wk">Wk 10</span> Scientific method — observation, hypothesis, experiment</div>
+    <div class="overview-week"><span class="wk">Wk 11</span> Scientific method — investigation design, variables, analysis</div>
+    <div class="overview-week"><span class="wk">Wk 12</span> Science and industry — connection to Ghanaian industry and daily life</div>
+
+    <div class="strand-header">Revision and Examination (Week 13)</div>
+    <div class="overview-week"><span class="wk">Wk 13</span> Student-led revision, past question practice, end-of-term exam</div>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div class="week">
+    <h2>Week 1: Living and Non-Living Things</h2>
+    <div class="subtitle">6 periods | Content Standard: S1.1.1 — Demonstrate understanding of living and non-living things</div>
+
+    <div class="standard">
+      <div class="label">Learning Indicators:</div>
+      <ul class="indicators">
+        <li>Classify materials into living and non-living things</li>
+        <li>State the characteristics of living things (MRS GREN)</li>
+        <li>Describe differences between plants and animals</li>
+      </ul>
+    </div>
+
+    <div class="period">
+      <h3>Period 1-2: Introduction and Classification</h3>
+      <p><strong>Activity:</strong> Outdoor walk around school compound. Students collect 10 items each (leaf, stone, insect, bottle cap, feather, seed, etc.) and sort into living/non-living on a large chart paper.</p>
+      <div class="group-note"><strong>Grouping:</strong> 8 groups of 6-7 students. Each group gets one chart paper. Discuss within groups first, then share with the class.</div>
+      <div class="no-lab"><strong>No lab needed</strong> — the school compound IS the lab for this activity.</div>
+      <p class="resources-tag">Resources: Chart paper (8 sheets), markers, items from the compound</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 3-4: Characteristics of Living Things</h3>
+      <p><strong>Activity:</strong> MRS GREN mnemonic — Movement, Respiration, Sensitivity, Growth, Reproduction, Excretion, Nutrition.</p>
+      <p>Each group creates a poster for ONE characteristic using local examples:</p>
+      <ul style="margin-left: 1.2rem; font-size: 0.95rem;">
+        <li><strong>Movement:</strong> "How does a grasshopper move differently from a mango tree?"</li>
+        <li><strong>Growth:</strong> Students measure their own height, compare with childhood photos brought from home</li>
+        <li><strong>Nutrition:</strong> "What do you eat? What does a plant 'eat'?"</li>
+        <li><strong>Reproduction:</strong> Cocoa pods, mango seeds, chicken eggs — real local examples</li>
+      </ul>
+      <div class="local-connection"><strong>Ghana connection:</strong> Use examples from students' own environment — cocoa farming, fishing, market produce. Make science feel like THEIR world, not a textbook world.</div>
+      <p class="resources-tag">Resources: Chart paper, markers, rulers (for height measurement)</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 5-6: Plants vs Animals</h3>
+      <p><strong>Activity:</strong> Venn diagram on the blackboard. Teacher draws, each row nominates one similarity or difference. Students copy into exercise books.</p>
+      <p>Discussion-based, not lecture-based. Ask: "Can plants move? Can animals make their own food? Why not?"</p>
+      <div class="assessment-inline"><strong>Quick quiz:</strong> 10 multiple-choice questions. Students swap papers and peer-mark. Saves you marking 52 papers.</div>
+      <div class="homework"><strong>Homework:</strong> Draw and label 5 living things in your community, stating one characteristic of life each one shows.</div>
+    </div>
+  </div>
+
+  <!-- WEEK 2 -->
+  <div class="week">
+    <h2>Week 2: Cells — The Basic Unit of Life</h2>
+    <div class="subtitle">6 periods | Content Standard: S1.1.2 — Demonstrate knowledge of cells</div>
+
+    <div class="standard">
+      <div class="label">Learning Indicators:</div>
+      <ul class="indicators">
+        <li>Describe the cell as the basic unit of life</li>
+        <li>Identify parts of plant and animal cells</li>
+        <li>State functions of cell organelles</li>
+      </ul>
+    </div>
+
+    <div class="period">
+      <h3>Period 1-2: What is a Cell?</h3>
+      <p><strong>Activity:</strong> Analogy — "A cell is like a school."</p>
+      <ul style="margin-left: 1.2rem; font-size: 0.95rem;">
+        <li>Cell membrane = school fence (controls what goes in and out)</li>
+        <li>Nucleus = headteacher's office (controls everything)</li>
+        <li>Mitochondria = kitchen/canteen (provides energy)</li>
+        <li>Cytoplasm = the school grounds (where everything happens)</li>
+        <li>Vacuole = the storeroom (stores materials)</li>
+      </ul>
+      <p>Students draw the analogy on chart paper — school diagram next to cell diagram.</p>
+      <div class="no-lab"><strong>If microscopes available:</strong> Prepare onion cell slides — students observe and draw. <strong>If not:</strong> Use textbook diagrams or hand-drawn enlargements on the board. Both teach the same concept.</div>
+      <p class="resources-tag">Resources: Chart paper, coloured pencils, textbook diagrams</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 3-4: Plant vs Animal Cells</h3>
+      <p><strong>Activity:</strong> Students draw and label both cells side by side on A4 paper. "Spot the difference" format — circle what plant cells have that animal cells don't (cell wall, chloroplasts, large central vacuole).</p>
+      <p>Gallery walk — display drawings on the walls. Students walk around and peer-review using sticky notes or verbal comments.</p>
+      <p class="resources-tag">Resources: A4 paper, coloured pencils, Blu-Tack or tape for display</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 5-6: Functions of Cell Organelles</h3>
+      <p><strong>Activity:</strong> "Cell Organelle Job Fair" — each group is assigned one organelle. They create a 2-minute "job description" presentation:</p>
+      <p style="margin: 0.5rem 0; padding: 0.5rem; background: #f5f5f5; border-radius: 4px; font-style: italic;">"I am the mitochondria. My job is to provide energy for the cell. Without me, nothing works! I break down food molecules and turn them into energy the cell can use."</p>
+      <div class="assessment-inline"><strong>Peer assessment:</strong> Simple rubric — content accuracy (out of 3), clarity (out of 3), teamwork (out of 3). Each group rates the other groups. Saves teacher marking time.</div>
+      <div class="homework"><strong>Homework:</strong> Textbook exercises on cell structure. Draw and label a plant cell from memory.</div>
+    </div>
+  </div>
+
+  <!-- WEEK 6 (HIGHLIGHT) -->
+  <div class="week">
+    <h2>Week 6: Acids, Bases and Salts — pH and Indicators</h2>
+    <div class="subtitle">6 periods | Content Standard: S1.3.1 — Demonstrate understanding of acids, bases and salts</div>
+
+    <div class="standard">
+      <div class="label">Learning Indicators:</div>
+      <ul class="indicators">
+        <li>Describe the concept of pH</li>
+        <li>Classify substances as acidic, basic, or neutral</li>
+        <li>Use indicators to test pH</li>
+      </ul>
+    </div>
+
+    <div class="period">
+      <h3>Period 1-2: What are Acids and Bases?</h3>
+      <p><strong>Activity:</strong> Start with what students already know — "Have you tasted lemon? That sour taste is acid. Have you touched soap? That slippery feeling is a base."</p>
+      <p>Brainstorm: list all acidic and basic things students can think of from daily life. Create a class chart.</p>
+      <p>Introduce pH scale (0-14). Draw on board. Students copy into exercise books.</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 3-4: The Hibiscus Indicator Practical</h3>
+      <p><strong>This is the highlight of the term.</strong></p>
+      <p><strong>Preparation:</strong> Collect hibiscus flowers (roselle/sobolo flowers work perfectly — they grow everywhere in Ghana). Crush petals in water to make a purple-red indicator solution.</p>
+      <p><strong>Activity:</strong> Students test household substances with the hibiscus indicator:</p>
+      <ul style="margin-left: 1.2rem; font-size: 0.95rem;">
+        <li><strong>Lemon juice</strong> — turns pink/red (acid)</li>
+        <li><strong>Vinegar</strong> — turns pink (acid)</li>
+        <li><strong>Soap solution</strong> — turns green/yellow (base)</li>
+        <li><strong>Wood ash water</strong> — turns green (base)</li>
+        <li><strong>Salt water</strong> — stays purple (neutral)</li>
+        <li><strong>Coca-Cola</strong> — turns red (acid — students love this one)</li>
+      </ul>
+      <div class="no-lab"><strong>No litmus paper needed.</strong> Hibiscus is free, grows locally, and gives beautiful colour changes. Students can even take the indicator home and test more things.</div>
+      <div class="group-note"><strong>Grouping:</strong> 8 groups. Each group gets a small cup of indicator and 6 test substances in bottle caps or small containers. Teacher prepares these before the lesson (~20 min prep).</div>
+      <p>Students record results in a table: substance, colour change, acid/base/neutral.</p>
+      <div class="assessment-inline"><strong>Assessment:</strong> Practical assessment — observe students during the activity. Mark: follows instructions, records accurately, can explain results. Quick checklist, not a full written mark.</div>
+    </div>
+
+    <div class="period">
+      <h3>Period 5-6: pH in Real Life</h3>
+      <p><strong>Activity:</strong> Discussion — where does pH matter in Ghana?</p>
+      <ul style="margin-left: 1.2rem; font-size: 0.95rem;">
+        <li><strong>Farming:</strong> Soil pH affects crop growth. Cocoa needs pH 6-7. How do farmers check this?</li>
+        <li><strong>Cooking:</strong> Kenkey fermentation is an acid-base process. Banku preparation changes pH.</li>
+        <li><strong>Water quality:</strong> Safe drinking water should be pH 6.5-8.5</li>
+        <li><strong>Health:</strong> Stomach acid, antacid tablets, heartburn</li>
+      </ul>
+      <div class="local-connection"><strong>Ghana connection:</strong> This is chemistry students eat, drink, and farm with every day. Make them see it. "Your grandmother who makes the best kenkey? She's a chemist."</div>
+      <div class="homework"><strong>Homework:</strong> Test 3 things at home with leftover hibiscus indicator. Draw and label the results. Bring to class next lesson.</div>
+    </div>
+  </div>
+
+  <!-- WEEKS 3-5, 7-12 (CONDENSED) -->
+  <div class="overview">
+    <h2>Remaining Weeks (condensed)</h2>
+    <p style="color: #777; margin-bottom: 1rem; font-size: 0.9rem;">Full detail available for each week — this overview shows the flow.</p>
+
+    <div class="strand-header">Strand 1 continued</div>
+    <div class="overview-week"><span class="wk">Wk 3</span> Levels of organisation. Hands-on: sequence picture cards (cells → tissues → organs → systems) using the human body. Group poster activity.</div>
+    <div class="overview-week"><span class="wk">Wk 4</span> Properties of materials. Sorting activity with real objects — classify by hardness, flexibility, transparency. No lab needed.</div>
+    <div class="overview-week"><span class="wk">Wk 5</span> Separation techniques. Practical with everyday items: salt/sand separation using water + cloth filter, rice/stones by hand-picking, oil/water demonstration with cooking oil.</div>
+    <div class="overview-week"><span class="wk">Wk 7</span> Neutralisation and everyday applications. Antacid demo (bicarbonate + vinegar). Making soap discussion. Extension: local soap-making industry.</div>
+
+    <div class="strand-header">Strand 2: Tools and Methods of Science</div>
+    <div class="overview-week"><span class="wk">Wk 8-9</span> Measurement and SI units. Practical stations: measure length (ruler), mass (kitchen scale or balance), volume (measuring cup/cylinder), time (stopwatch/phone). Estimation before measurement.</div>
+    <div class="overview-week"><span class="wk">Wk 10-11</span> Scientific method. Students design and carry out their own investigation: "Which type of soil holds the most water?" using school garden soil. Full cycle: observe → hypothesise → experiment → analyse → conclude.</div>
+    <div class="overview-week"><span class="wk">Wk 12</span> Science and Ghanaian industry — mining (gold, bauxite), cocoa processing, textile production (kente weaving uses dye chemistry), fishing (preservation methods). Students research one industry and present.</div>
+  </div>
+
+  <!-- WEEK 13 -->
+  <div class="week" style="border-left-color: #c62828;">
+    <h2>Week 13: Revision and End-of-Term Examination</h2>
+    <div class="subtitle">6 periods</div>
+
+    <div class="period">
+      <h3>Period 1-2: Student-Led Revision</h3>
+      <p>Each group takes one sub-strand and presents a 5-minute recap to the class. Forces students to review and teach — most effective revision method.</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 3-4: Past Question Practice</h3>
+      <p>Work through past WASSCE/SHS exam questions relevant to Term 1 content. Discuss exam technique: read questions carefully, show working, manage time.</p>
+    </div>
+
+    <div class="period">
+      <h3>Period 5-6: End-of-Term Examination</h3>
+      <p><strong>Exam structure per GES guidelines:</strong></p>
+      <p>Section A — Objectives: 40 marks (multiple choice, 40 questions, 45 minutes)</p>
+      <p>Section B — Essay/Structured: 60 marks (5 questions, answer 4, 75 minutes)</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT FRAMEWORK -->
+  <div class="exam-section">
+    <h2>Assessment Framework (GES SBC)</h2>
+    <div class="weight-grid">
+      <div class="weight"><div class="pct">50%</div><div class="type">Continuous Assessment<br><span style="font-size: 0.8rem;">Quizzes, homework, practicals, projects, class tests</span></div></div>
+      <div class="weight"><div class="pct">50%</div><div class="type">End-of-Term Exam<br><span style="font-size: 0.8rem;">Objectives + Essay/Structured</span></div></div>
+    </div>
+
+    <h3 style="color: #006d32; margin-top: 1rem;">Assessment Schedule:</h3>
+    <ul class="assessment-schedule">
+      <li><strong>Week 3:</strong> Quiz 1 — Diversity of Matter: Living Things (peer-marked, 10 min)</li>
+      <li><strong>Week 5:</strong> Class Test — Materials and Separation Techniques (teacher-marked)</li>
+      <li><strong>Week 6:</strong> Practical Assessment — Acid-Base Testing with Hibiscus (observation checklist)</li>
+      <li><strong>Week 9:</strong> Quiz 2 — Measurement and SI Units (peer-marked)</li>
+      <li><strong>Week 11:</strong> Group Project — Design an Investigation (group grade + individual reflection)</li>
+      <li><strong>Week 13:</strong> End-of-Term Examination</li>
+    </ul>
+  </div>
+
+  <!-- RESOURCE SUMMARY -->
+  <div class="resource-summary">
+    <h2>Resource Summary</h2>
+    <div class="resource-cols">
+      <div class="resource-col">
+        <h4>Free / Very Cheap (used most weeks)</h4>
+        <ul>
+          <li>Chart paper, markers, coloured pencils, A4 paper</li>
+          <li>Items from the school compound (stones, leaves, insects, soil, seeds)</li>
+          <li>Household items (salt, sand, lemon, soap, vinegar, cooking oil, Coca-Cola)</li>
+          <li>Hibiscus/roselle flowers (free — grow everywhere)</li>
+          <li>Textbook diagrams (drawn large on board if no photocopier)</li>
+          <li>Exercise books for student notes</li>
+          <li>Wood ash (free — from cooking fires)</li>
+        </ul>
+      </div>
+      <div class="resource-col">
+        <h4>Lab Equipment (optional — always has an alternative)</h4>
+        <ul>
+          <li>Microscope + slides (Week 2 cells — optional, textbook diagrams work)</li>
+          <li>Beakers, filter cloth/paper (Week 5 separation — can use cups + cloth)</li>
+          <li>Measuring instruments (Week 8-9 — can substitute with kitchen scale, ruler, plastic cups with markings)</li>
+          <li>Bunsen burner (Week 5 evaporation — can use charcoal stove or sun evaporation)</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prep-time">Estimated teacher prep time: ~30 minutes per week<br><span style="font-weight: 400; font-size: 0.9rem;">Mostly collecting materials and preparing chart paper. Peer/self-assessment reduces marking to ~1 hour/week.</span></div>
+  </div>
+
+</div>
+
+<div class="footer">
+  Example output from Teacher's Workspace — generated by Claude Code<br>
+  Curriculum: Ghana Education Service Standards-Based Curriculum (SBC) | Integrated Science SHS1
+</div>
+
+</body>
+</html>

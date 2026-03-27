@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educação Física — Ensino Médio 1º Ano | Plano Bimestral</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f5f5f5; color: #2d2d2d; }
+
+  .header { background: linear-gradient(135deg, #1b5e20, #43a047); color: white; padding: 2rem; text-align: center; }
+  .header h1 { font-size: 2rem; margin-bottom: 0.3rem; }
+  .header .meta { font-size: 1rem; opacity: 0.9; }
+  .header .flag { font-size: 2.5rem; margin-bottom: 0.5rem; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+
+  .info-bar { display: flex; flex-wrap: wrap; gap: 0.8rem; margin: 1.5rem 0; }
+  .info-tag { background: #e8f5e9; border: 1px solid #a5d6a7; border-radius: 20px; padding: 0.4rem 1rem; font-size: 0.9rem; }
+
+  .context-box { background: #fff3e0; border: 2px solid #ffcc80; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+  .context-box h2 { color: #e65100; font-size: 1.1rem; margin-bottom: 0.8rem; }
+  .context-box p { font-size: 0.95rem; line-height: 1.6; margin-bottom: 0.5rem; }
+
+  .overview { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .overview h2 { color: #1b5e20; margin-bottom: 1rem; font-size: 1.3rem; }
+  .overview-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.8rem; }
+  .overview-cell { background: #e8f5e9; border-radius: 8px; padding: 0.8rem; text-align: center; }
+  .overview-cell .week-label { font-weight: 700; color: #1b5e20; font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .overview-cell .week-topic { font-size: 0.8rem; color: #555; }
+
+  .week { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.2rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); border-left: 5px solid #43a047; }
+  .week h2 { color: #1b5e20; font-size: 1.3rem; }
+  .week .subtitle { color: #777; font-size: 0.9rem; margin-bottom: 1rem; }
+
+  .lesson-block { margin: 0.8rem 0; padding: 1rem; border-radius: 8px; }
+  .warmup { background: #fff8e1; border-left: 4px solid #f9a825; }
+  .main-activity { background: #e8f5e9; border-left: 4px solid #2e7d32; }
+  .cooldown { background: #e3f2fd; border-left: 4px solid #1565c0; }
+  .theory { background: #f3e5f5; border-left: 4px solid #7b1fa2; }
+  .game { background: #fce4ec; border-left: 4px solid #c62828; }
+
+  .lesson-block h3 { font-size: 1rem; margin-bottom: 0.4rem; }
+  .warmup h3 { color: #f57f17; }
+  .main-activity h3 { color: #2e7d32; }
+  .cooldown h3 { color: #1565c0; }
+  .theory h3 { color: #7b1fa2; }
+  .game h3 { color: #c62828; }
+  .lesson-block p, .lesson-block ul { font-size: 0.95rem; line-height: 1.6; }
+  .lesson-block ul { margin-left: 1.2rem; margin-top: 0.3rem; }
+
+  .adapt-box { background: #e0f2f1; border: 1px solid #80cbc4; border-radius: 8px; padding: 0.8rem; margin: 0.5rem 0; }
+  .adapt-box h4 { color: #00695c; font-size: 0.9rem; margin-bottom: 0.3rem; }
+  .adapt-box p { font-size: 0.85rem; line-height: 1.5; }
+
+  .assessment-section { background: white; border: 2px solid #a5d6a7; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0; }
+  .assessment-section h2 { color: #1b5e20; margin-bottom: 1rem; }
+  .criteria-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
+  .criteria-card { padding: 0.8rem; border-radius: 8px; font-size: 0.9rem; }
+  .criteria-card .label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.3rem; }
+  .criteria-proc { background: #e8f5e9; border: 1px solid #a5d6a7; }
+  .criteria-att { background: #e3f2fd; border: 1px solid #90caf9; }
+  .criteria-cog { background: #f3e5f5; border: 1px solid #ce93d8; }
+
+  .resources { background: white; border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .resources h2 { color: #1b5e20; margin-bottom: 0.8rem; }
+  .resource-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+  .resource-col h3 { font-size: 0.95rem; margin-bottom: 0.5rem; }
+  .resource-col ul { font-size: 0.9rem; line-height: 1.8; margin-left: 1.2rem; }
+  .free-tag { background: #c8e6c9; color: #1b5e20; font-size: 0.7rem; padding: 0.1rem 0.4rem; border-radius: 4px; font-weight: 700; }
+
+  .culture-note { background: #fffde7; border: 2px solid #fff176; border-radius: 12px; padding: 1.2rem; margin: 1rem 0; }
+  .culture-note h3 { color: #f57f17; margin-bottom: 0.5rem; }
+  .culture-note p { font-size: 0.9rem; line-height: 1.6; }
+
+  .teacher-note { background: #f5f5f5; border-left: 4px solid #9e9e9e; padding: 0.8rem; border-radius: 0 8px 8px 0; margin: 0.5rem 0; font-size: 0.9rem; color: #555; }
+  .teacher-note strong { color: #333; }
+
+  .footer { text-align: center; padding: 2rem; color: #999; font-size: 0.85rem; }
+
+  @media print {
+    body { background: white; }
+    .header { background: #1b5e20 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .week, .overview, .assessment-section, .resources { break-inside: avoid; box-shadow: none; border: 1px solid #ddd; }
+    .container { max-width: 100%; }
+  }
+
+  @media (max-width: 600px) {
+    .overview-grid { grid-template-columns: repeat(2, 1fr); }
+    .criteria-grid { grid-template-columns: 1fr; }
+    .resource-grid { grid-template-columns: 1fr; }
+    .header h1 { font-size: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="flag">🇧🇷</div>
+  <h1>Educação Física — 1º Ano Ensino Médio</h1>
+  <div class="meta">1º Bimestre | Práticas Corporais: Jogos e Esportes | BNCC</div>
+</div>
+
+<div class="container">
+
+  <div class="info-bar">
+    <span class="info-tag">📚 BNCC — Educação Física</span>
+    <span class="info-tag">🏫 Ensino Médio 1º Ano</span>
+    <span class="info-tag">📅 1º Bimestre (10 semanas)</span>
+    <span class="info-tag">⏰ 2 aulas/semana × 50 min</span>
+    <span class="info-tag">👥 38 alunos</span>
+    <span class="info-tag">🏐 Quadra poliesportiva</span>
+  </div>
+
+  <div class="context-box">
+    <h2>📋 Contexto da Professora</h2>
+    <p>"Tenho 38 alunos no 1º ano, quadra coberta mas sem material novo. Muitos alunos não gostam de educação física porque acham que é só futebol. Quero mudar isso."</p>
+    <p><strong>O que Claude faz:</strong> Cria um plano bimestral que vai além do futebol — inclui esportes de rede, jogos cooperativos, práticas corporais brasileiras, e momentos de reflexão. Respeita a realidade: pouco material, turma grande, alunos desmotivados.</p>
+  </div>
+
+  <!-- OVERVIEW -->
+  <div class="overview">
+    <h2>Visão Geral do Bimestre</h2>
+    <div class="overview-grid">
+      <div class="overview-cell">
+        <div class="week-label">Sem. 1-2</div>
+        <div class="week-topic">Diagnóstico + Jogos Cooperativos</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Sem. 3-4</div>
+        <div class="week-topic">Voleibol — Fundamentos</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Sem. 5-6</div>
+        <div class="week-topic">Voleibol — Jogo e Tática</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Sem. 7-8</div>
+        <div class="week-topic">Práticas Corporais Brasileiras</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Sem. 9</div>
+        <div class="week-topic">Festival Esportivo</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Sem. 10</div>
+        <div class="week-topic">Avaliação + Reflexão</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Competências BNCC</div>
+        <div class="week-topic">EM13LGG501, EM13LGG502, EM13LGG503</div>
+      </div>
+      <div class="overview-cell">
+        <div class="week-label">Prep/semana</div>
+        <div class="week-topic">~20 min</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEK 1-2 -->
+  <div class="week">
+    <h2>Semanas 1-2: Diagnóstico e Jogos Cooperativos</h2>
+    <div class="subtitle">4 aulas | Objetivo: conhecer a turma, quebrar o gelo, avaliar nível motor</div>
+
+    <div class="lesson-block warmup">
+      <h3>🔥 Aquecimento — Pega-Pega Variações (8 min)</h3>
+      <ul>
+        <li><strong>Aula 1:</strong> Pega-pega corrente (quem é pego se junta formando uma corrente)</li>
+        <li><strong>Aula 2:</strong> Pega-pega com salvamento (colegas podem "salvar" quem foi pego)</li>
+        <li><strong>Aula 3:</strong> Pega-pega sombra (imitar os movimentos de quem está na frente)</li>
+        <li><strong>Aula 4:</strong> Pega-pega estatua (quem é pego vira estátua, colega descongela)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block main-activity">
+      <h3>🎯 Atividade Principal — Jogos Cooperativos (30 min)</h3>
+      <p>Nenhum jogo competitivo nas primeiras 2 semanas. Foco em cooperação para quebrar a dinâmica "só quem é bom joga".</p>
+      <ul>
+        <li><strong>Travessia do rio:</strong> Turma inteira cruza a quadra usando apenas 6 colchonetes como "pedras" — ninguém pode pisar no chão</li>
+        <li><strong>Volençol (vôlei com lençol):</strong> Grupos de 6 seguram um lençol e lançam/recebem a bola. Prepara para voleibol sem pressão técnica</li>
+        <li><strong>Nó humano:</strong> Círculo de 10 alunos, todos dão as mãos cruzadas, desenrolam sem soltar</li>
+        <li><strong>Circuito cooperativo:</strong> 5 estações com desafios em dupla (carregar bola de costas, caminhar vendado guiado pelo colega, etc.)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block cooldown">
+      <h3>💧 Volta à Calma + Roda de Conversa (12 min)</h3>
+      <p>Alongamento em círculo. Perguntas norteadoras:</p>
+      <ul>
+        <li>"O que foi mais difícil: o exercício físico ou trabalhar em grupo?"</li>
+        <li>"O que vocês acham que é educação física além de esporte?"</li>
+      </ul>
+    </div>
+
+    <div class="teacher-note">
+      <strong>Nota para a professora:</strong> Use as semanas 1-2 para mapear: quem lidera, quem se isola, quem tem limitações físicas, quem tem resistência à participação. Esse diagnóstico guia as adaptações das próximas semanas. Registre em uma folha simples (nome + observação).
+    </div>
+
+    <div class="adapt-box">
+      <h4>♿ Adaptação inclusiva</h4>
+      <p>Alunos com restrição física participam como "diretores de estratégia" nos jogos cooperativos — dão instruções ao grupo. No circuito, adaptar estações (ex: bola no colo em vez de nas costas para cadeirante).</p>
+    </div>
+  </div>
+
+  <!-- WEEK 3-4 -->
+  <div class="week">
+    <h2>Semanas 3-4: Voleibol — Fundamentos</h2>
+    <div class="subtitle">4 aulas | Objetivo: toque, manchete, saque por baixo | BNCC EM13LGG501</div>
+
+    <div class="lesson-block warmup">
+      <h3>🔥 Aquecimento (8 min)</h3>
+      <ul>
+        <li>Corrida leve com bola: em duplas, trocar passes enquanto caminham/correm pela quadra</li>
+        <li>Mobilidade articular: ombros, punhos, tornozelos (movimentos do vôlei)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block main-activity">
+      <h3>🏐 Fundamentos — Progressão Pedagógica (30 min)</h3>
+      <p><strong>Aula 1 — Toque:</strong> Bola para cima sozinho → em dupla → triângulo. Dica: "mãos em formato de coração acima da testa"</p>
+      <p><strong>Aula 2 — Manchete:</strong> Bola lançada pelo professor → recepção parado → recepção em movimento. Dica: "braços esticados, bater na plataforma, não nas mãos"</p>
+      <p><strong>Aula 3 — Saque por baixo:</strong> Posição → saque na parede → saque por cima da rede (ou corda). Sem pressão de acertar — foco no gesto</p>
+      <p><strong>Aula 4 — Mini-jogo adaptado:</strong> 4×4 em meia quadra, bola pode quicar 1 vez, saque mais perto da rede</p>
+    </div>
+
+    <div class="lesson-block cooldown">
+      <h3>💧 Volta à Calma (12 min)</h3>
+      <p>Alongamento + reflexão: "Qual fundamento foi mais fácil? Por quê?" Registrar as respostas no caderno (parte conceitual da avaliação).</p>
+    </div>
+
+    <div class="teacher-note">
+      <strong>Material mínimo:</strong> 6 bolas de vôlei (ou borracha) + rede ou corda amarrada entre postes. Se não tiver bola de vôlei suficiente, use bolas de borracha — o gesto motor é o mesmo.
+    </div>
+
+    <div class="adapt-box">
+      <h4>🎯 Diferenciação por nível</h4>
+      <p><strong>Iniciante:</strong> Bola de borracha (mais leve), rede mais baixa, pode segurar a bola antes de passar<br>
+      <strong>Intermediário:</strong> Bola oficial, regras normais<br>
+      <strong>Avançado:</strong> Desafio de sequência (toque-manchete-toque sem deixar cair)</p>
+    </div>
+  </div>
+
+  <!-- WEEK 5-6 -->
+  <div class="week">
+    <h2>Semanas 5-6: Voleibol — Jogo e Tática</h2>
+    <div class="subtitle">4 aulas | Objetivo: posicionamento, rodízio, jogo formal adaptado</div>
+
+    <div class="lesson-block main-activity">
+      <h3>🏐 Construção do Jogo (30 min)</h3>
+      <p><strong>Aula 1 — Posicionamento:</strong> Marcação com giz na quadra. Ensinar rodízio com caminhada (sem bola). Depois, simular com bola.</p>
+      <p><strong>Aula 2 — Jogo 4×4:</strong> Times mistos por nível (cada time tem iniciantes e avançados). Regra adaptada: saque mais perto, bola pode quicar 1×.</p>
+      <p><strong>Aula 3 — Jogo 6×6:</strong> Jogo formal com rodízio. Professora apita e explica cada situação ao vivo ("Olha, agora é a vez de quem? Rodou certo?").</p>
+      <p><strong>Aula 4 — Torneio relâmpago:</strong> 4 times, jogos de 8 minutos. Critério de pontuação: pontos do jogo + pontos por fair play (professora avalia).</p>
+    </div>
+
+    <div class="lesson-block theory">
+      <h3>📖 Momento Conceitual (10 min por aula)</h3>
+      <p>Temas para roda de conversa ou registro no caderno:</p>
+      <ul>
+        <li>Aula 1: "Por que o vôlei é um esporte de rede/parede? Que outros existem?"</li>
+        <li>Aula 2: "O que é fair play? Dê exemplos de dentro e fora da quadra"</li>
+        <li>Aula 3: "Vôlei de praia vs quadra — diferenças de regra, corpo, estratégia"</li>
+        <li>Aula 4: "Como o vôlei chegou ao Brasil? Pesquisar para próxima aula" (tarefa)</li>
+      </ul>
+    </div>
+
+    <div class="culture-note">
+      <h3>🇧🇷 Conexão Cultural</h3>
+      <p>O Brasil é tricampeão olímpico no vôlei (masculino 2004/2016, feminino 2008/2012). Usar vídeos curtos (2-3 min) de jogadas históricas como motivação antes da aula. Nomes para pesquisa: Giba, Sheilla Castro, Bruninho, Fernanda Venturini. Se não tiver projetor, a professora pode narrar as jogadas — os alunos adoram histórias.</p>
+    </div>
+  </div>
+
+  <!-- WEEK 7-8 -->
+  <div class="week">
+    <h2>Semanas 7-8: Práticas Corporais Brasileiras</h2>
+    <div class="subtitle">4 aulas | Objetivo: vivenciar capoeira, jogos populares, e dança | BNCC EM13LGG502, EM13LGG503</div>
+
+    <div class="lesson-block game">
+      <h3>🥋 Aula 1-2: Capoeira — Ginga e Roda (50 min cada)</h3>
+      <p><strong>Contextualização (10 min):</strong> Origem africana, resistência, patrimônio cultural imaterial. Perguntar: "Capoeira é luta, dança, ou jogo? Por quê?"</p>
+      <p><strong>Prática (30 min):</strong></p>
+      <ul>
+        <li>Ginga básica — ritmo com o corpo, transferência de peso</li>
+        <li>Meia-lua de frente e cocorinha (esquiva) — em duplas</li>
+        <li>Roda de capoeira — todos participam, quem não joga bate palma e canta</li>
+      </ul>
+      <p><strong>Música:</strong> Usar celular com caixa bluetooth (ou a professora canta). Músicas: "Paranauê", "Dona Maria como vai você"</p>
+    </div>
+
+    <div class="lesson-block main-activity">
+      <h3>🎮 Aula 3: Jogos Populares Brasileiros (50 min)</h3>
+      <ul>
+        <li><strong>Peteca:</strong> Em círculo, manter no ar. Depois, jogo com rede (como badminton). Se não tiver peteca: fazer com jornal e barbante!</li>
+        <li><strong>Queimada com variações:</strong> Queimada com 2 bolas, queimada cooperativa (quem é queimado troca de time)</li>
+        <li><strong>Cabo de guerra:</strong> Desafio — turma inteira vs professora + 3 alunos (demonstra força coletiva)</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block main-activity">
+      <h3>💃 Aula 4: Ritmos e Expressão Corporal (50 min)</h3>
+      <p>Atividade de dança — NÃO coreografia decorada. Foco em expressão:</p>
+      <ul>
+        <li>Andar pela quadra no ritmo de diferentes músicas (forró, funk, samba, MPB)</li>
+        <li>Em grupos de 5: criar uma sequência de 8 movimentos com um ritmo brasileiro à escolha</li>
+        <li>Apresentação para a turma — sem julgamento, aplausos para todos</li>
+      </ul>
+    </div>
+
+    <div class="adapt-box">
+      <h4>🎯 Dica importante</h4>
+      <p>Alguns alunos (especialmente meninos adolescentes) resistem a dançar. Não force — ofereça a opção de ser o "DJ" do grupo ou marcar o ritmo com palmas/percussão corporal. A participação vem com o tempo, não com pressão.</p>
+    </div>
+
+    <div class="culture-note">
+      <h3>🌍 Nota sobre Diversidade Cultural</h3>
+      <p>Ao ensinar capoeira, reconheça sua origem na resistência do povo negro escravizado no Brasil. Não reduza a uma "dança divertida". Aproveite para discutir: patrimônio cultural, apropriação cultural, e a importância das práticas corporais afro-brasileiras na formação da identidade nacional. Isso atende diretamente à Lei 10.639/03 (ensino de história e cultura afro-brasileira).</p>
+    </div>
+  </div>
+
+  <!-- WEEK 9 -->
+  <div class="week">
+    <h2>Semana 9: Festival Esportivo da Turma</h2>
+    <div class="subtitle">2 aulas | Objetivo: aplicar tudo em um evento organizado pelos alunos</div>
+
+    <div class="lesson-block game">
+      <h3>🎉 Organização e Execução (2 × 50 min)</h3>
+      <p><strong>Aula 1 — Planejamento (em sala ou quadra):</strong></p>
+      <ul>
+        <li>Dividir turma em 4 comissões: arbitragem, organização, comunicação, registro</li>
+        <li>Montar tabela de jogos: mini-vôlei, peteca, roda de capoeira, circuito cooperativo</li>
+        <li>Cada comissão apresenta seu plano (5 min por grupo)</li>
+      </ul>
+      <p><strong>Aula 2 — Festival:</strong></p>
+      <ul>
+        <li>Alunos organizam e gerenciam as atividades</li>
+        <li>Professora observa e avalia (protagonismo, colaboração, resolução de conflitos)</li>
+        <li>Premiação: "destaque fair play", "destaque organização", "destaque superação" (todos ganham algo)</li>
+      </ul>
+    </div>
+
+    <div class="teacher-note">
+      <strong>Nota:</strong> O festival é a avaliação prática principal do bimestre. Avalie o PROCESSO (como organizaram, como resolveram problemas) e não apenas a performance esportiva. Tire fotos para o portfólio da turma.
+    </div>
+  </div>
+
+  <!-- WEEK 10 -->
+  <div class="week">
+    <h2>Semana 10: Avaliação e Reflexão</h2>
+    <div class="subtitle">2 aulas | Objetivo: autoavaliação, avaliação conceitual, fechamento</div>
+
+    <div class="lesson-block theory">
+      <h3>📝 Aula 1 — Avaliação Conceitual (50 min)</h3>
+      <p>Avaliação escrita ou oral (escolher conforme o perfil da turma):</p>
+      <ul>
+        <li>Descreva 3 fundamentos do voleibol e quando usar cada um</li>
+        <li>Qual a origem da capoeira e por que é considerada patrimônio cultural?</li>
+        <li>O que é fair play? Dê um exemplo que você vivenciou neste bimestre</li>
+        <li>Escolha uma prática corporal brasileira e explique sua importância</li>
+      </ul>
+    </div>
+
+    <div class="lesson-block cooldown">
+      <h3>🪞 Aula 2 — Autoavaliação e Fechamento (50 min)</h3>
+      <p><strong>Autoavaliação (ficha impressa ou oral):</strong></p>
+      <ul>
+        <li>"De 1 a 5, como foi minha participação neste bimestre?"</li>
+        <li>"O que eu aprendi que não sabia antes?"</li>
+        <li>"O que eu gostaria de praticar no próximo bimestre?"</li>
+      </ul>
+      <p><strong>Roda final:</strong> Cada aluno fala uma palavra que resume o bimestre. Professora fecha com visão do próximo bimestre.</p>
+    </div>
+  </div>
+
+  <!-- ASSESSMENT -->
+  <div class="assessment-section">
+    <h2>📊 Avaliação do Bimestre</h2>
+    <p style="margin-bottom: 1rem; font-size: 0.95rem;">Seguindo as diretrizes da BNCC para Educação Física no Ensino Médio — avaliação processual e formativa.</p>
+    <div class="criteria-grid">
+      <div class="criteria-card criteria-proc">
+        <div class="label">Procedimental — 40%</div>
+        <p>Participação nas aulas práticas, execução dos fundamentos do vôlei, envolvimento nas práticas corporais, desempenho no festival</p>
+      </div>
+      <div class="criteria-card criteria-att">
+        <div class="label">Atitudinal — 30%</div>
+        <p>Cooperação, respeito, fair play, inclusão dos colegas, assiduidade, cuidado com material</p>
+      </div>
+      <div class="criteria-card criteria-cog">
+        <div class="label">Conceitual — 30%</div>
+        <p>Avaliação escrita/oral, registros no caderno, pesquisa sobre vôlei brasileiro, autoavaliação</p>
+      </div>
+    </div>
+    <div class="teacher-note" style="margin-top: 1rem;">
+      <strong>Instrumentos:</strong> Ficha de observação por aula (marcar presente/participou/destaque) + avaliação escrita semana 10 + autoavaliação do aluno. Total: 3 notas que compõem a média.
+    </div>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="resources">
+    <h2>📦 Recursos Necessários</h2>
+    <div class="resource-grid">
+      <div class="resource-col">
+        <h3>Essenciais <span class="free-tag">BAIXO CUSTO</span></h3>
+        <ul>
+          <li>6 bolas de borracha ou vôlei</li>
+          <li>Rede de vôlei ou corda grossa</li>
+          <li>Giz para marcar quadra</li>
+          <li>Apito</li>
+          <li>Colchonetes (4-6) ou tatames</li>
+          <li>Jornal + barbante (peteca caseira)</li>
+          <li>Celular + caixa bluetooth para música</li>
+        </ul>
+      </div>
+      <div class="resource-col">
+        <h3>Opcionais (se disponíveis)</h3>
+        <ul>
+          <li>Petecas oficiais</li>
+          <li>Cones de marcação</li>
+          <li>Projetor para vídeos de vôlei</li>
+          <li>Berimbau ou atabaque para capoeira</li>
+          <li>Câmera/celular para registro do festival</li>
+          <li>Fichas de avaliação impressas</li>
+        </ul>
+      </div>
+    </div>
+    <div class="teacher-note" style="margin-top: 1rem;">
+      <strong>Prep time estimado:</strong> ~20 min/semana. A maioria das atividades usa os mesmos materiais. A peteca caseira pode ser feita pelos alunos como atividade em 10 minutos.
+    </div>
+  </div>
+
+  <!-- BNCC ALIGNMENT -->
+  <div class="overview">
+    <h2>Alinhamento BNCC — Competências e Habilidades</h2>
+    <div class="lesson-block theory" style="margin-top: 0.5rem;">
+      <h3>Competências Específicas de Linguagens (Ensino Médio)</h3>
+      <ul>
+        <li><strong>EM13LGG501:</strong> Selecionar e utilizar movimentos corporais de forma consciente e intencional para interagir socialmente em práticas corporais</li>
+        <li><strong>EM13LGG502:</strong> Analisar criticamente preconceitos, estereótipos e relações de poder presentes nas práticas corporais</li>
+        <li><strong>EM13LGG503:</strong> Vivenciar práticas corporais, reconhecendo-as como formas de expressão de diferentes grupos culturais</li>
+      </ul>
+    </div>
+    <div class="teacher-note">
+      <strong>Como atende a Lei 10.639/03:</strong> As aulas de capoeira (semanas 7-8) abordam diretamente a história e cultura afro-brasileira, atendendo à legislação e à BNCC simultaneamente.
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>Gerado pelo Teacher's Workspace — Claude Code</p>
+    <p>Modelo de plano bimestral para Educação Física | Adaptável a qualquer turma e realidade escolar</p>
+  </div>
+
+</div>
+</body>
+</html>

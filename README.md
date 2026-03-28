@@ -18,7 +18,7 @@ ChatGPT forgets everything between conversations. This tool remembers — your n
 ## Setup
 
 1. **Download** — click the green "Code" button above → "Download ZIP" → extract the folder
-2. **Install Claude Code** — follow the guide at [claude.ai/claude-code](https://claude.ai/claude-code). You'll paste one command into your terminal (Mac: search "Terminal"; Windows: search "PowerShell")
+2. **Install Claude Code** — follow the guide at [Claude Code](https://docs.anthropic.com/en/docs/claude-code/overview). You'll paste one command into your terminal (Mac: search "Terminal"; Windows: search "PowerShell")
 3. **Start** — in your terminal, go to the folder and type `claude`:
    ```
    cd Desktop/teachers

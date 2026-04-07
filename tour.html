@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Teaching Assistant — What's Possible</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --teal:   #0d9488;
+    --teal-l: #ccfbf1;
+    --teal-d: #0f766e;
+    --amber:  #d97706;
+    --amber-l:#fef3c7;
+    --rose:   #e11d48;
+    --rose-l: #ffe4e6;
+    --violet: #7c3aed;
+    --violet-l:#ede9fe;
+    --blue:   #1d4ed8;
+    --blue-l: #dbeafe;
+    --green:  #15803d;
+    --green-l:#dcfce7;
+    --slate:  #1e293b;
+    --muted:  #64748b;
+    --border: #e2e8f0;
+    --bg:     #f8fafc;
+    --white:  #ffffff;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--slate); line-height: 1.6; }
+
+  /* ── HERO ─────────────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #0f766e 100%);
+    color: white;
+    padding: 5rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(13,148,136,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 30%, rgba(124,58,237,0.15) 0%, transparent 50%);
+  }
+  .hero-inner { position: relative; max-width: 760px; margin: 0 auto; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 100px;
+    padding: 0.4rem 1.2rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.15; margin-bottom: 1.2rem; }
+  .hero h1 span { color: #5eead4; }
+  .hero p { font-size: 1.15rem; opacity: 0.85; max-width: 580px; margin: 0 auto 2.5rem; }
+  .hero-flags { font-size: 1.8rem; letter-spacing: 0.15rem; opacity: 0.7; }
+
+  /* ── SECTION WRAPPER ──────────────────────────── */
+  .section { padding: 4rem 2rem; }
+  .section-inner { max-width: 1080px; margin: 0 auto; }
+  .section-label {
+    display: inline-block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-d);
+    background: var(--teal-l);
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+    margin-bottom: 0.8rem;
+  }
+  .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 800; color: var(--slate); margin-bottom: 0.6rem; }
+  .section-sub { font-size: 1.05rem; color: var(--muted); max-width: 560px; margin-bottom: 2.5rem; }
+  .alt-bg { background: var(--white); }
+
+  /* ── FEATURE GRID ─────────────────────────────── */
+  .feature-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
+
+  .feat-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.6rem;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .feat-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.09); transform: translateY(-2px); }
+  .feat-icon {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .feat-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .feat-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.55; }
+  .feat-card .examples-list { margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px solid var(--border); }
+  .feat-card .ex-item { font-size: 0.82rem; color: var(--muted); padding: 0.2rem 0; }
+  .feat-card .ex-item::before { content: "→ "; color: var(--teal); font-weight: 600; }
+
+  /* color themes */
+  .theme-teal   .feat-icon { background: var(--teal-l);   color: var(--teal-d); }
+  .theme-amber  .feat-icon { background: var(--amber-l);  color: var(--amber);  }
+  .theme-rose   .feat-icon { background: var(--rose-l);   color: var(--rose);   }
+  .theme-violet .feat-icon { background: var(--violet-l); color: var(--violet); }
+  .theme-blue   .feat-icon { background: var(--blue-l);   color: var(--blue);   }
+  .theme-green  .feat-icon { background: var(--green-l);  color: var(--green);  }
+
+  /* ── EXAMPLE GALLERY ──────────────────────────── */
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 1.2rem; }
+
+  .example-card {
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--white);
+    transition: box-shadow 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .example-card:hover { box-shadow: 0 8px 28px rgba(0,0,0,0.12); transform: translateY(-3px); }
+
+  .ex-thumb {
+    height: 100px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 2.8rem;
+  }
+  .ex-body { padding: 1rem 1.2rem 1.2rem; }
+  .ex-body .ex-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.2rem 0.6rem;
+    border-radius: 100px;
+    margin-bottom: 0.5rem;
+  }
+  .ex-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.35; }
+  .ex-body p  { font-size: 0.82rem; color: var(--muted); line-height: 1.45; }
+  .ex-open {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    margin-top: 0.8rem;
+    font-size: 0.8rem; font-weight: 600;
+    color: var(--teal-d);
+  }
+
+  /* ── HOW IT WORKS ─────────────────────────────── */
+  .steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+  .step { display: flex; gap: 1.2rem; align-items: flex-start; }
+  .step-num {
+    flex-shrink: 0;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: white;
+    font-weight: 800; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .step h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .step p  { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
+  .step .q { font-size: 0.88rem; color: var(--slate); background: var(--bg); border-left: 3px solid var(--teal); padding: 0.5rem 0.8rem; margin-top: 0.6rem; border-radius: 0 6px 6px 0; font-style: italic; }
+
+  /* ── SHORTCUT PILLS ───────────────────────────── */
+  .shortcuts { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+  .shortcut {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 0.9rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  .shortcut .cmd {
+    font-family: 'Courier New', monospace;
+    font-size: 0.88rem; font-weight: 700;
+    background: var(--teal-l); color: var(--teal-d);
+    padding: 0.2rem 0.6rem; border-radius: 6px;
+  }
+  .shortcut p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+  /* ── WORLD STRIP ──────────────────────────────── */
+  .world-strip {
+    background: linear-gradient(135deg, #0f172a, #1e3a5f);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  .world-strip h2 { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.8rem; }
+  .world-strip p  { opacity: 0.75; max-width: 540px; margin: 0 auto 2rem; }
+  .countries { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+  .country-pill {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 100px;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.85rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  /* ── FOOTER ───────────────────────────────────── */
+  footer {
+    background: var(--slate);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-size: 0.85rem;
+  }
+  footer strong { color: white; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ─────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Teacher's Workspace</div>
+    <h1>Your <span>AI teaching assistant</span><br>that never forgets how you work.</h1>
+    <p>Just talk to it like a colleague. Ask for a lesson plan, a set of report comments, a parent email — or anything else. No special knowledge needed.</p>
+    <div class="hero-flags">🇹🇼 🇬🇧 🇦🇺 🇺🇸 🇸🇬 🇵🇭 🇬🇭 🇧🇷 🌍</div>
+  </div>
+</section>
+
+
+<!-- ── WHAT IT CAN DO ────────────────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Capabilities</div>
+    <h2 class="section-title">Everything a great teaching assistant would do</h2>
+    <p class="section-sub">From planning a single lesson to a full year's scheme — and everything in between.</p>
+
+    <div class="feature-grid">
+
+      <div class="feat-card theme-teal">
+        <div class="feat-icon">📋</div>
+        <h3>Lesson Planning</h3>
+        <p>Single lessons, weekly plans, full term or year schemes. Aligned to your curriculum, adapted to your class size and resources.</p>
+        <div class="examples-list">
+          <div class="ex-item">Single 45-min lesson with timing</div>
+          <div class="ex-item">5-day weekly plan overview</div>
+          <div class="ex-item">Term plan with assessment windows</div>
+          <div class="ex-item">Full-year scheme of work</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-amber">
+        <div class="feat-icon">📊</div>
+        <h3>Assessment & Grading</h3>
+        <p>Report comments, rubrics, grade descriptors, and comment banks — written in your voice, mapped to your standards.</p>
+        <div class="examples-list">
+          <div class="ex-item">Report card comments for a whole class</div>
+          <div class="ex-item">Rubrics and marking criteria</div>
+          <div class="ex-item">Progress reports with parent tips</div>
+          <div class="ex-item">Reusable comment banks</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-rose">
+        <div class="feat-icon">✉️</div>
+        <h3>Parent Communication</h3>
+        <p>Emails, newsletters, permission slips, and meeting notes — in the tone your school expects.</p>
+        <div class="examples-list">
+          <div class="ex-item">Progress update emails</div>
+          <div class="ex-item">Weekly class newsletters</div>
+          <div class="ex-item">Concern or follow-up letters</div>
+          <div class="ex-item">Parent evening meeting notes</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-violet">
+        <div class="feat-icon">📝</div>
+        <h3>Worksheets & Resources</h3>
+        <p>Quizzes, revision guides, activity sheets, and visual schedules — ready to print or share digitally.</p>
+        <div class="examples-list">
+          <div class="ex-item">Differentiated worksheets (3 levels)</div>
+          <div class="ex-item">Exit tickets and quick quizzes</div>
+          <div class="ex-item">Revision guides and flashcards</div>
+          <div class="ex-item">Visual timetables (SEN-friendly)</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-blue">
+        <div class="feat-icon">🎓</div>
+        <h3>Exam & Revision Prep</h3>
+        <p>Past paper analysis, gap-finding, revision timetables, and mock marking — built around your exam board.</p>
+        <div class="examples-list">
+          <div class="ex-item">Revision timetables</div>
+          <div class="ex-item">Topic gap analysis</div>
+          <div class="ex-item">Practice question sets</div>
+          <div class="ex-item">Mark scheme breakdowns</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-green">
+        <div class="feat-icon">♿</div>
+        <h3>Differentiation & SEN</h3>
+        <p>From stretch tasks for high-flyers to fully adapted plans for students with IEPs — every learner covered.</p>
+        <div class="examples-list">
+          <div class="ex-item">3-way differentiated activities</div>
+          <div class="ex-item">Adapted plans aligned to IEPs/EHCPs</div>
+          <div class="ex-item">Visual schedules and Makaton support</div>
+          <div class="ex-item">Sensory accommodation notes</div>
+        </div>
+      </div>
+
+      <div class="feat-card theme-teal">
+        <div class="feat-icon">📄</div>
+        <h3>Exam Papers</h3>
+        <p>Print-ready exam papers with proper formatting — cover page, instructions, sections, answer boxes, and examiner's marks grid.</p>
+        <div class="examples-list">
+          <div class="ex-item">Multiple choice, short answer, problem sums</div>
+          <div class="ex-item">Aligned to your exam board & mark scheme</div>
+          <div class="ex-item">Working space + answer boxes included</div>
+          <div class="ex-item">Marks summary table for the examiner</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── EXAMPLE GALLERY ───────────────────────────── -->
+<section class="section alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Real Examples</div>
+    <h2 class="section-title">See actual outputs — from teachers around the world</h2>
+    <p class="section-sub">These were all created with a simple conversation — no forms, no templates to fill in.</p>
+
+    <div class="gallery">
+
+      <a class="example-card" href="examples/01-taiwan-efl-animals.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#fef3c7,#fde68a);">🐾</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#fef3c7;color:#92400e;">EFL · Year 2 · Taiwan</div>
+          <h4>Animals Vocabulary Lesson</h4>
+          <p>45-minute English lesson with songs, flashcards, and a vocabulary game. Full differentiation for mixed ability.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/02-london-sen-my-body.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#ede9fe,#ddd6fe);">🧠</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#ede9fe;color:#5b21b6;">SEN · KS1 · London</div>
+          <h4>My Body — SEN-Adapted</h4>
+          <p>Science lesson fully adapted for a special educational needs setting, with visual schedules and sensory alternatives.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/03-australia-arts-identity.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#fce7f3,#fbcfe8);">🎨</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#fce7f3;color:#9d174d;">Visual Arts · Year 7 · Australia</div>
+          <h4>Identity &amp; Self-Portrait Unit</h4>
+          <p>Creative arts unit with studio time, technique demonstrations, portfolio assessment criteria, and material list.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/04-us-assessment-child-b.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#dbeafe,#bfdbfe);">📄</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#dbeafe;color:#1e40af;">Progress Report · Grade 2 · USA</div>
+          <h4>Quarterly Progress Report</h4>
+          <p>Full narrative report with strengths-led comments, competency ratings, and home-support recommendations.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/05-singapore-maths-fractions.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#fee2e2,#fecaca);">➗</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#fee2e2;color:#991b1b;">Maths · P5 · Singapore</div>
+          <h4>Fractions — Weekly Plan</h4>
+          <p>Five-day mastery maths plan using the CPA approach (Concrete → Pictorial → Abstract) with daily learning targets.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/06-philippines-ap-grade1.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#d1fae5,#a7f3d0);">🌏</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#d1fae5;color:#065f46;">Araling Panlipunan · Grade 1 · Philippines</div>
+          <h4>Pamilya at Komunidad</h4>
+          <p>DepEd DLP-format lesson in Filipino, aligned to MELC competencies, with values integration (pagmamahal sa pamilya).</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/07-ghana-science-shs1.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#fef9c3,#fef08a);">⚗️</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#fef9c3;color:#713f12;">Science · SHS1 · Ghana</div>
+          <h4>Photosynthesis Lab</h4>
+          <p>Practical science lesson designed for 60 students with no lab equipment — uses locally available materials throughout.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/08-brazil-pe-ensino-medio.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#dcfce7,#bbf7d0);">⚽</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#dcfce7;color:#14532d;">Educação Física · EM · Brazil</div>
+          <h4>Esportes Coletivos</h4>
+          <p>Plano de aula em português com objetivos da BNCC, integração de valores, e diferenciação por nível de habilidade.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+      <a class="example-card" href="examples/09-singapore-maths-p5-exam.html" target="_blank">
+        <div class="ex-thumb" style="background: linear-gradient(135deg,#eef2ff,#c7d2fe);">📄</div>
+        <div class="ex-body">
+          <div class="ex-tag" style="background:#eef2ff;color:#3730a3;">Exam Paper · P5 Maths · Singapore</div>
+          <h4>Semestral Assessment 2</h4>
+          <p>Full print-ready exam paper — cover page, 3 sections (MCQ, short answer, problem sums), working boxes, and examiner's marks grid.</p>
+          <span class="ex-open">Open example →</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ── HOW IT WORKS ──────────────────────────────── -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-label">Getting Started</div>
+    <h2 class="section-title">Three questions, then you're ready to go</h2>
+    <p class="section-sub">The first time you open your workspace, your assistant will ask you three things. That's it.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h3>Your name</h3>
+          <p>So your assistant can address you personally — not "Dear Teacher."</p>
+          <div class="q">"What's your name and what would you like me to call you?"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h3>What you teach</h3>
+          <p>Subject, age group, and country — so plans use your curriculum and your terminology.</p>
+          <div class="q">"What country are you in and what do you teach?"</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h3>What you need right now</h3>
+          <p>Your first task. No waiting — your assistant starts working immediately.</p>
+          <div class="q">"What do you need help with right now?"</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── SHORTCUTS ─────────────────────────────────── -->
+<section class="section alt-bg">
+  <div class="section-inner">
+    <div class="section-label">Shortcuts</div>
+    <h2 class="section-title">Two shortcuts to start — grows as you do</h2>
+    <p class="section-sub">Type these to go straight to the thing you need most. Your workspace can add more shortcuts over time, tailored to how you work.</p>
+
+    <div class="shortcuts">
+      <div class="shortcut">
+        <span class="cmd">/lesson</span>
+        <p>Create a lesson plan — single lesson, weekly, full term, or year</p>
+      </div>
+      <div class="shortcut">
+        <span class="cmd">/grade</span>
+        <p>Write report comments, build rubrics, grade a whole class at once</p>
+      </div>
+      <div class="shortcut" style="border-style:dashed; opacity:0.7;">
+        <span class="cmd" style="background:#f1f5f9;color:#64748b;">+ yours</span>
+        <p>Ask for the same thing 3 times — your assistant will offer to make a shortcut for it</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ── WORLD STRIP ────────────────────────────────── -->
+<section class="world-strip">
+  <h2>Works for teachers everywhere</h2>
+  <p>Adapts to your country, your language, your curriculum, and your classroom reality — automatically.</p>
+  <div class="countries">
+    <div class="country-pill">🇹🇼 Taiwan</div>
+    <div class="country-pill">🇬🇧 United Kingdom</div>
+    <div class="country-pill">🇦🇺 Australia</div>
+    <div class="country-pill">🇺🇸 United States</div>
+    <div class="country-pill">🇸🇬 Singapore</div>
+    <div class="country-pill">🇵🇭 Philippines</div>
+    <div class="country-pill">🇬🇭 Ghana</div>
+    <div class="country-pill">🇧🇷 Brazil</div>
+    <div class="country-pill">🇳🇿 New Zealand</div>
+    <div class="country-pill">🇨🇦 Canada</div>
+    <div class="country-pill">🇰🇪 Kenya</div>
+    <div class="country-pill">🇮🇳 India</div>
+    <div class="country-pill">🇿🇦 South Africa</div>
+    <div class="country-pill">🌍 + anywhere</div>
+  </div>
+</section>
+
+
+<!-- ── FOOTER ─────────────────────────────────────── -->
+<footer>
+  <strong>Teacher's Workspace</strong> &nbsp;·&nbsp; Powered by Claude &nbsp;·&nbsp;
+  Drop any file into your folder and say "it's there" &nbsp;·&nbsp; No technical knowledge needed
+</footer>
+
+</body>
+</html>

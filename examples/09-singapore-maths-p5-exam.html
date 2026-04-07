@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primary 5 Mathematics — Semester 2 Examination</title>
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Times New Roman', Times, serif; background: #f0f0f0; color: #111; font-size: 13pt; }
+
+  /* ── PRINT / SCREEN WRAPPER ── */
+  .page {
+    max-width: 210mm;
+    margin: 1.5rem auto;
+    background: white;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  }
+
+  /* ── COVER BAND ── */
+  .cover-band {
+    background: #1a3a6b;
+    color: white;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 10pt;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  .cover-band .school { font-weight: 600; letter-spacing: 0.03em; }
+  .cover-band .confidential { opacity: 0.7; font-style: italic; }
+
+  /* ── HEADER ── */
+  .exam-header { padding: 1.6rem 2rem 1rem; border-bottom: 3px double #1a3a6b; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 1rem; }
+  .header-top .logo-area { text-align: center; }
+  .school-name { font-size: 13pt; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
+  .exam-title  { font-size: 15pt; font-weight: 700; margin: 0.3rem 0; text-align: center; }
+  .exam-sub    { font-size: 11pt; text-align: center; color: #444; }
+
+  .info-box {
+    border: 1.5px solid #1a3a6b;
+    border-radius: 4px;
+    padding: 0.8rem 1.2rem;
+    min-width: 200px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 10pt;
+  }
+  .info-box table { width: 100%; border-collapse: collapse; }
+  .info-box td { padding: 0.18rem 0; }
+  .info-box td:first-child { color: #555; width: 100px; }
+  .info-box td:last-child { font-weight: 600; }
+
+  .candidate-box {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.6rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 10pt;
+  }
+  .field-label { font-size: 9pt; color: #555; margin-bottom: 2px; }
+  .field-line  { border-bottom: 1.5px solid #333; height: 22px; }
+
+  /* ── INSTRUCTIONS ── */
+  .instructions {
+    margin: 1rem 2rem;
+    border: 1px solid #ccc;
+    border-left: 4px solid #1a3a6b;
+    padding: 0.8rem 1rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 10.5pt;
+    background: #f8f9ff;
+  }
+  .instructions h3 { font-size: 10.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem; color: #1a3a6b; }
+  .instructions ol { margin-left: 1.3rem; }
+  .instructions li { margin: 0.2rem 0; line-height: 1.5; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider {
+    margin: 1.5rem 2rem 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+  .section-badge {
+    background: #1a3a6b;
+    color: white;
+    padding: 0.3rem 1rem;
+    font-size: 10pt;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+  .section-desc { font-size: 10pt; color: #444; }
+  .section-marks { margin-left: auto; font-size: 10pt; color: #1a3a6b; font-weight: 600; }
+
+  /* ── QUESTIONS ── */
+  .questions { padding: 0 2rem 1rem; }
+
+  .question {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1.1rem 0;
+    align-items: flex-start;
+  }
+  .q-num { min-width: 24px; font-weight: 700; padding-top: 0.05rem; }
+  .q-body { flex: 1; }
+  .q-marks {
+    min-width: 44px;
+    text-align: right;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 9pt;
+    color: #888;
+    padding-top: 0.1rem;
+  }
+  .q-marks span { background: #eef2ff; border: 1px solid #c7d2fe; border-radius: 3px; padding: 0.1rem 0.4rem; color: #3730a3; font-weight: 600; }
+
+  /* MCQ */
+  .mcq-options { margin-top: 0.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 0.2rem 1rem; }
+  .mcq-option { display: flex; gap: 0.5rem; align-items: baseline; }
+  .bubble { width: 14px; height: 14px; border: 1.5px solid #555; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
+  .opt-letter { font-weight: 700; min-width: 16px; }
+
+  /* Answer lines */
+  .ans-line { border-bottom: 1px solid #aaa; margin: 0.7rem 0 0.2rem; height: 20px; }
+  .ans-line-lg { border-bottom: 1px solid #aaa; margin: 0.5rem 0; height: 20px; }
+
+  .ans-box {
+    border: 1px solid #aaa;
+    height: 26px;
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: 10pt;
+    color: #aaa;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+
+  /* Structured / long answer */
+  .working-box {
+    border: 1px solid #bbb;
+    min-height: 80px;
+    margin: 0.6rem 0;
+    padding: 0.4rem;
+    position: relative;
+    background: repeating-linear-gradient(to bottom, white, white 24px, #e8e8e8 25px);
+    background-size: 100% 25px;
+  }
+  .working-label { font-size: 9pt; color: #aaa; font-family: 'Segoe UI', system-ui, sans-serif; position: absolute; top: 4px; right: 6px; }
+
+  .answer-shaded {
+    background: #f0f4ff;
+    border: 1.5px solid #1a3a6b;
+    padding: 0.4rem 0.8rem;
+    margin-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 11pt;
+  }
+  .answer-shaded .label { font-size: 10pt; font-weight: 700; color: #1a3a6b; min-width: 90px; font-family: 'Segoe UI', system-ui, sans-serif; }
+  .answer-shaded .blank { flex: 1; border-bottom: 1.5px solid #1a3a6b; min-height: 22px; }
+
+  /* Table */
+  .q-table { border-collapse: collapse; margin: 0.6rem 0; font-size: 11pt; }
+  .q-table th, .q-table td { border: 1.5px solid #555; padding: 0.4rem 0.8rem; }
+  .q-table th { background: #eef2ff; color: #1a3a6b; font-weight: 700; text-align: center; }
+  .q-table td { min-width: 80px; text-align: center; }
+  .q-table td.blank-cell { background: #f9f9f9; min-width: 100px; }
+
+  /* Sub-parts */
+  .sub-q { margin: 0.6rem 0 0 1.2rem; display: flex; gap: 0.7rem; }
+  .sub-label { font-weight: 700; min-width: 26px; }
+
+  /* ── MARKS TABLE ── */
+  .marks-section {
+    margin: 1rem 2rem;
+    padding: 1rem;
+    border: 2px solid #1a3a6b;
+    border-radius: 4px;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 10pt;
+  }
+  .marks-section h3 { font-size: 10pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #1a3a6b; margin-bottom: 0.6rem; }
+  .marks-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1px solid #aaa; }
+  .marks-cell { border: 1px solid #aaa; padding: 0.3rem 0.5rem; text-align: center; }
+  .marks-cell.header { background: #eef2ff; font-weight: 700; color: #1a3a6b; }
+
+  /* ── PAGE FOOTER ── */
+  .page-footer {
+    border-top: 1px solid #ccc;
+    padding: 0.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    font-size: 9pt;
+    color: #888;
+  }
+
+  /* ── PRINT ── */
+  @media print {
+    body { background: white; }
+    .page { box-shadow: none; margin: 0; max-width: 100%; }
+    .cover-band { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .section-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .marks-cell.header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .answer-shaded { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .instructions { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .q-table th { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- COVER BAND -->
+  <div class="cover-band">
+    <span class="school">Lakeside Primary School</span>
+    <span class="confidential">For Examiner's Use Only — Confidential</span>
+  </div>
+
+  <!-- HEADER -->
+  <div class="exam-header">
+    <div class="header-top">
+      <div class="logo-area" style="flex:1;">
+        <div class="school-name">Lakeside Primary School</div>
+        <div class="exam-title">PRIMARY 5 MATHEMATICS</div>
+        <div class="exam-sub">Semestral Assessment 2 &nbsp;|&nbsp; 2025</div>
+      </div>
+      <div class="info-box">
+        <table>
+          <tr><td>Date</td><td>16 October 2025</td></tr>
+          <tr><td>Duration</td><td>1 hour 30 minutes</td></tr>
+          <tr><td>Total Marks</td><td>100</td></tr>
+          <tr><td>Sections</td><td>A · B · C</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="candidate-box">
+      <div>
+        <div class="field-label">Name:</div>
+        <div class="field-line"></div>
+      </div>
+      <div>
+        <div class="field-label">Register No.:</div>
+        <div class="field-line"></div>
+      </div>
+      <div>
+        <div class="field-label">Class:</div>
+        <div class="field-line"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCTIONS -->
+  <div class="instructions">
+    <h3>Instructions to Candidates</h3>
+    <ol>
+      <li>Write your <strong>name, register number and class</strong> in the spaces provided above.</li>
+      <li>Do <strong>not</strong> open this booklet until you are told to do so.</li>
+      <li>Follow all instructions carefully.</li>
+      <li>Answer <strong>all</strong> questions.</li>
+      <li>The number of marks is shown in brackets [ ] at the end of each question or part question.</li>
+      <li>You are <strong>not</strong> allowed to use a calculator for this paper.</li>
+      <li>Show all working clearly. Marks may be awarded for correct working even if the final answer is wrong.</li>
+    </ol>
+  </div>
+
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION A — Multiple Choice                        -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="section-divider">
+    <div class="section-badge">Section A</div>
+    <div class="section-desc">Multiple Choice — Circle the letter of the correct answer.</div>
+    <div class="section-marks">15 marks</div>
+  </div>
+
+  <div class="questions">
+
+    <div class="question">
+      <div class="q-num">1.</div>
+      <div class="q-body">
+        Which of the following fractions is equivalent to <strong>4/6</strong>?
+        <div class="mcq-options">
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(A)</span> 2/3</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(B)</span> 3/4</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(C)</span> 8/10</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(D)</span> 4/8</div>
+        </div>
+      </div>
+      <div class="q-marks"><span>1</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">2.</div>
+      <div class="q-body">
+        A bag of rice weighed 2<sup>3</sup>⁄<sub>4</sub> kg. After some rice was used, it weighed 1<sup>1</sup>⁄<sub>4</sub> kg. How much rice was used?
+        <div class="mcq-options">
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(A)</span> 1 kg</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(B)</span> 1<sup>1</sup>⁄<sub>2</sub> kg</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(C)</span> 1<sup>1</sup>⁄<sub>4</sub> kg</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(D)</span> 2 kg</div>
+        </div>
+      </div>
+      <div class="q-marks"><span>1</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">3.</div>
+      <div class="q-body">
+        Express 0.75 as a fraction in its simplest form.
+        <div class="mcq-options">
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(A)</span> 75/100</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(B)</span> 7/10</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(C)</span> 3/4</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(D)</span> 3/5</div>
+        </div>
+      </div>
+      <div class="q-marks"><span>1</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">4.</div>
+      <div class="q-body">
+        A rectangle has a perimeter of 48 cm. Its length is 14 cm. What is its breadth?
+        <div class="mcq-options">
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(A)</span> 10 cm</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(B)</span> 12 cm</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(C)</span> 16 cm</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(D)</span> 34 cm</div>
+        </div>
+      </div>
+      <div class="q-marks"><span>1</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">5.</div>
+      <div class="q-body">
+        The ratio of boys to girls in a class is 3 : 5. If there are 24 girls, how many pupils are there altogether?
+        <div class="mcq-options">
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(A)</span> 18</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(B)</span> 32</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(C)</span> 38</div>
+          <div class="mcq-option"><div class="bubble"></div><span class="opt-letter">(D)</span> 40</div>
+        </div>
+      </div>
+      <div class="q-marks"><span>1</span></div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <div style="padding: 0 2rem 0.5rem; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 9.5pt; color: #888; font-style: italic;">Questions 6–15 continue in the same format &nbsp;[10 more marks]</div>
+
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION B — Short Answer                           -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="section-divider">
+    <div class="section-badge">Section B</div>
+    <div class="section-desc">Short Answer — Show all working clearly.</div>
+    <div class="section-marks">35 marks</div>
+  </div>
+
+  <div class="questions">
+
+    <div class="question">
+      <div class="q-num">16.</div>
+      <div class="q-body">
+        Find the value of &nbsp; 3<sup>2</sup>⁄<sub>5</sub> + 1<sup>4</sup>⁄<sub>5</sub>.
+        <div class="working-box" style="min-height:55px;"><span class="working-label">Working</span></div>
+        <div class="answer-shaded"><span class="label">Answer:</span><div class="blank"></div></div>
+      </div>
+      <div class="q-marks"><span>2</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">17.</div>
+      <div class="q-body">
+        Arrange the following fractions in order from <strong>smallest to largest</strong>: &nbsp; <strong>5/8 &nbsp; 3/4 &nbsp; 7/12 &nbsp; 1/2</strong>
+        <div class="working-box" style="min-height:55px;"><span class="working-label">Working</span></div>
+        <div class="answer-shaded"><span class="label">Answer:</span><div class="blank"></div></div>
+      </div>
+      <div class="q-marks"><span>2</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">18.</div>
+      <div class="q-body">
+        Mrs Tan baked 120 cookies. She gave <sup>3</sup>⁄<sub>8</sub> of them to her neighbours and <sup>1</sup>⁄<sub>4</sub> of the remainder to her colleagues. How many cookies did she have left?
+        <div class="working-box" style="min-height:70px;"><span class="working-label">Working</span></div>
+        <div class="answer-shaded"><span class="label">Answer:</span><div class="blank"></div></div>
+      </div>
+      <div class="q-marks"><span>3</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">19.</div>
+      <div class="q-body">
+        Complete the table by filling in the missing values.
+        <table class="q-table" style="margin-top:0.6rem;">
+          <tr>
+            <th>Fraction</th>
+            <th>Decimal</th>
+            <th>Percentage</th>
+          </tr>
+          <tr>
+            <td>3/5</td>
+            <td class="blank-cell"></td>
+            <td class="blank-cell"></td>
+          </tr>
+          <tr>
+            <td class="blank-cell"></td>
+            <td>0.4</td>
+            <td class="blank-cell"></td>
+          </tr>
+          <tr>
+            <td class="blank-cell"></td>
+            <td class="blank-cell"></td>
+            <td>25%</td>
+          </tr>
+        </table>
+      </div>
+      <div class="q-marks"><span>3</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">20.</div>
+      <div class="q-body">
+        A jug contained 2.4 ℓ of juice. Ali poured <sup>5</sup>⁄<sub>8</sub> of it into cups. How many millilitres of juice remained in the jug?
+        <div class="working-box" style="min-height:75px;"><span class="working-label">Working</span></div>
+        <div class="answer-shaded"><span class="label">Answer:</span><div class="blank"></div></div>
+      </div>
+      <div class="q-marks"><span>3</span></div>
+    </div>
+
+  </div><!-- /questions -->
+
+  <div style="padding: 0 2rem 0.5rem; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 9.5pt; color: #888; font-style: italic;">Questions 21–28 continue in the same format &nbsp;[22 more marks]</div>
+
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!-- SECTION C — Problem Sums                           -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <div class="section-divider">
+    <div class="section-badge">Section C</div>
+    <div class="section-desc">Problem Sums — Show full working. Marks for method.</div>
+    <div class="section-marks">50 marks</div>
+  </div>
+
+  <div class="questions">
+
+    <div class="question">
+      <div class="q-num">29.</div>
+      <div class="q-body">
+        <p>Peter, Quinn and Rachel shared a sum of money in the ratio 2 : 3 : 5. Quinn received $120 more than Peter.</p>
+
+        <div class="sub-q" style="margin-top:0.8rem;">
+          <div class="sub-label">(a)</div>
+          <div>
+            How much money did they share altogether?
+            <div class="working-box" style="min-height:90px;"><span class="working-label">Working</span></div>
+            <div class="answer-shaded"><span class="label">Answer (a):</span><div class="blank"></div></div>
+          </div>
+        </div>
+
+        <div class="sub-q" style="margin-top:0.8rem;">
+          <div class="sub-label">(b)</div>
+          <div>
+            Rachel spent <sup>3</sup>⁄<sub>5</sub> of her share on books. How much did she have left?
+            <div class="working-box" style="min-height:80px;"><span class="working-label">Working</span></div>
+            <div class="answer-shaded"><span class="label">Answer (b):</span><div class="blank"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="q-marks"><span>5</span></div>
+    </div>
+
+    <div class="question">
+      <div class="q-num">30.</div>
+      <div class="q-body">
+        <p>A tank was <sup>2</sup>⁄<sub>3</sub> full of water. After 180 ℓ of water was poured out, the tank was <sup>1</sup>⁄<sub>4</sub> full. What is the capacity of the tank?</p>
+        <div style="margin-top:0.7rem; padding:0.6rem; background:#fafafa; border:1px dashed #bbb; font-size:10pt; color:#666; font-family:'Segoe UI',system-ui,sans-serif;">
+          Draw a model or bar diagram here if helpful.
+        </div>
+        <div class="working-box" style="min-height:100px;"><span class="working-label">Working</span></div>
+        <div class="answer-shaded"><span class="label">Answer:</span><div class="blank"></div></div>
+      </div>
+      <div class="q-marks"><span>5</span></div>
+    </div>
+
+  </div>
+
+  <div style="padding: 0 2rem 0.5rem; font-family: 'Segoe UI', system-ui, sans-serif; font-size: 9.5pt; color: #888; font-style: italic;">Questions 31–35 continue in the same format &nbsp;[40 more marks]</div>
+
+
+  <!-- MARKS SUMMARY -->
+  <div class="marks-section" style="margin-top:1.5rem;">
+    <h3>Marks Summary — For Examiner's Use</h3>
+    <div class="marks-grid">
+      <div class="marks-cell header">Section A</div>
+      <div class="marks-cell header">Section B</div>
+      <div class="marks-cell header">Section C</div>
+      <div class="marks-cell header">Total</div>
+      <div class="marks-cell header">Checked By</div>
+      <div class="marks-cell">/15</div>
+      <div class="marks-cell">/35</div>
+      <div class="marks-cell">/50</div>
+      <div class="marks-cell">/100</div>
+      <div class="marks-cell"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="page-footer">
+    <span>Lakeside Primary School &nbsp;·&nbsp; P5 Mathematics SA2 2025</span>
+    <span>Page 1 of 8 &nbsp;·&nbsp; <strong>End of Paper</strong></span>
+  </div>
+
+</div><!-- /page -->
+</body>
+</html>
